@@ -11,6 +11,10 @@ description: >-
 Users can only be invited to an Organization project. To learn how to create an Organization click [here](../account-settings/personal-workspace/creating-an-organization/)
 {% endhint %}
 
+{% hint style="info" %}
+change request
+{% endhint %}
+
 <details>
 
 <summary>Step 1: Go to the Administration Users Tab</summary>
