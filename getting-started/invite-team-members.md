@@ -7,6 +7,10 @@ description: >-
 
 # 👥 Invite Team Members
 
+{% hint style="warning" %}
+Users can only be invited to an Organization project. To learn how to create an Organization click [here](../account-settings/personal-workspace/creating-an-organization/)
+{% endhint %}
+
 <details>
 
 <summary>Step 1: Go to the Administration Users Tab</summary>
