@@ -9,7 +9,7 @@ description: >-
 
 ## Getting Started
 
-If you have a specific question, try the keyword search at the top of this page. If you're just getting started, here are some quick introductory lessons to get your QA groove rolling in TestFiesta. EDIT FOR DALY.
+If you have a specific question, try the keyword search at the top of this page. If you're just getting started, here are some quick introductory lessons to get your QA groove rolling in TestFiesta.
 
 {% content-ref url="getting-started/create-an-account/" %}
 [create-an-account](getting-started/create-an-account/)
