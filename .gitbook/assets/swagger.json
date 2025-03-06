@@ -1,0 +1,3145 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"TemplateQueryParams": {
+				"properties": {
+					"limit": {
+						"type": "number",
+						"format": "double"
+					},
+					"offset": {
+						"type": "number",
+						"format": "double"
+					},
+					"q": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"createdByIds": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"creationStartDate": {
+						"type": "string"
+					},
+					"creationEndDate": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"limit",
+					"offset"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CustomFieldDataType": {
+				"type": "string",
+				"enum": [
+					"text",
+					"radio",
+					"date",
+					"step",
+					"attachment",
+					"link",
+					"checkbox",
+					"dropdown",
+					"none"
+				]
+			},
+			"TemplateField": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"dataType": {
+						"$ref": "#/components/schemas/CustomFieldDataType"
+					},
+					"defaultValue": {
+						"type": "string"
+					},
+					"value": {
+						"type": "string"
+					},
+					"options": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"dataType"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateTemplateDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"templateFields": {
+						"items": {
+							"$ref": "#/components/schemas/TemplateField"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateTemplateDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"templateFields": {
+						"items": {
+							"$ref": "#/components/schemas/TemplateField"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"TagQueryParams": {
+				"properties": {
+					"limit": {
+						"type": "number",
+						"format": "double"
+					},
+					"offset": {
+						"type": "number",
+						"format": "double"
+					},
+					"q": {
+						"type": "string"
+					},
+					"entityType": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"limit",
+					"offset"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EntityType": {
+				"type": "string",
+				"enum": [
+					"cases",
+					"milestones",
+					"executions",
+					"results",
+					"runs",
+					"plans",
+					"defects"
+				]
+			},
+			"CreateTagDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"entityTypes": {
+						"items": {
+							"$ref": "#/components/schemas/EntityType"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"entityTypes"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateTagDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"entityTypes": {
+						"items": {
+							"$ref": "#/components/schemas/EntityType"
+						},
+						"type": "array"
+					},
+					"archived": {
+						"type": "boolean"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PaginatedQuery": {
+				"properties": {
+					"limit": {
+						"type": "number",
+						"format": "double"
+					},
+					"offset": {
+						"type": "number",
+						"format": "double"
+					},
+					"q": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"limit",
+					"offset"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SharedStepItem": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"expectedResult": {
+						"type": "string"
+					},
+					"children": {
+						"items": {
+							"$ref": "#/components/schemas/SharedStepItem"
+						},
+						"type": "array"
+					},
+					"sharedStepUid": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateSharedStepDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"steps": {
+						"items": {
+							"$ref": "#/components/schemas/SharedStepItem"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"steps"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateSharedStepDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"steps": {
+						"items": {
+							"$ref": "#/components/schemas/SharedStepItem"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Record_number.number_": {
+				"properties": {},
+				"additionalProperties": {
+					"type": "number",
+					"format": "double"
+				},
+				"type": "object",
+				"description": "Construct a type with a set of properties K of type T"
+			},
+			"StatusFreq": {
+				"$ref": "#/components/schemas/Record_number.number_"
+			},
+			"CustomFields": {
+				"properties": {
+					"configs": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"tags": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"selectedCases": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"caseCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"progress": {
+						"type": "number",
+						"format": "double"
+					},
+					"frequency": {
+						"$ref": "#/components/schemas/StatusFreq"
+					},
+					"externalFields": {}
+				},
+				"required": [
+					"configs",
+					"tags",
+					"selectedCases"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateTestRunDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"cases": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/CustomFields"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"milestoneUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"externalId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateTestRunDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"cases": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/CustomFields"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"milestoneUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"archived": {
+						"type": "boolean"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ListPlanQueryParams": {
+				"properties": {
+					"limit": {
+						"type": "number",
+						"format": "double"
+					},
+					"offset": {
+						"type": "number",
+						"format": "double"
+					},
+					"q": {
+						"type": "string"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					},
+					"archived": {
+						"type": "boolean"
+					},
+					"minRunCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"maxRunCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"minCreatedAt": {
+						"type": "string"
+					},
+					"maxCreatedAt": {
+						"type": "string"
+					},
+					"minProgress": {
+						"type": "number",
+						"format": "double"
+					},
+					"maxProgress": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"limit",
+					"offset",
+					"archived",
+					"minRunCount",
+					"minCreatedAt",
+					"minProgress"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ConfigurationDTO": {
+				"properties": {
+					"sets": {
+						"items": {
+							"items": {
+								"type": "string"
+							},
+							"type": "array"
+						},
+						"type": "array",
+						"description": "a configuration set is a list of configuration options prefixed by their id"
+					},
+					"type": {
+						"type": "string",
+						"enum": [
+							"simple",
+							"matrix"
+						]
+					}
+				},
+				"required": [
+					"sets",
+					"type"
+				],
+				"type": "object"
+			},
+			"Record_string.string_": {
+				"properties": {},
+				"additionalProperties": {
+					"type": "string"
+				},
+				"type": "object",
+				"description": "Construct a type with a set of properties K of type T"
+			},
+			"CreatePlanDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"milestoneUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/Record_string.string_"
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"projectUid": {
+						"type": "number",
+						"format": "double"
+					},
+					"testRuns": {
+						"items": {
+							"properties": {
+								"configuration": {
+									"$ref": "#/components/schemas/ConfigurationDTO"
+								},
+								"uid": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"required": [
+								"configuration",
+								"uid"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					},
+					"configuration": {
+						"$ref": "#/components/schemas/ConfigurationDTO"
+					},
+					"tagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"projectUid",
+					"configuration"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdatePlanDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"tagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"milestoneUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"runUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateMilestoneDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"startDate": {
+						"type": "string"
+					},
+					"dueAt": {
+						"type": "string"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"planIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"runIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"projectUid": {
+						"type": "number",
+						"format": "double"
+					},
+					"tagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"startDate",
+					"dueAt",
+					"status",
+					"planIds",
+					"runIds",
+					"projectUid"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateMilestoneDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"startDate": {
+						"type": "string"
+					},
+					"dueAt": {
+						"type": "string"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"planIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"runIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"projectUid": {
+						"type": "number",
+						"format": "double"
+					},
+					"tagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"archived": {
+						"type": "boolean"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Record_string.any_": {
+				"properties": {},
+				"additionalProperties": {},
+				"type": "object",
+				"description": "Construct a type with a set of properties K of type T"
+			},
+			"CreateFolderDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/Record_string.any_"
+					},
+					"parentId": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"name",
+					"parentId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateFolderDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/Record_string.any_"
+					},
+					"parentId": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ExecutionStep": {
+				"properties": {
+					"testStepUid": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/Record_string.any_"
+					}
+				},
+				"required": [
+					"testStepUid",
+					"description",
+					"customFields"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateExecutionDTO": {
+				"properties": {
+					"externalId": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"testCaseUid": {
+						"type": "number",
+						"format": "double"
+					},
+					"testCaseRef": {
+						"type": "number",
+						"format": "double"
+					},
+					"testRunUid": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/Record_string.any_"
+					},
+					"steps": {
+						"items": {
+							"$ref": "#/components/schemas/ExecutionStep"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"customFields"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateExecutionDTO": {
+				"properties": {
+					"status": {
+						"type": "number",
+						"format": "double"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					},
+					"dueAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"assignedTo": {
+						"type": "string"
+					},
+					"tagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"tagReplacements": {
+						"items": {
+							"properties": {
+								"newTagUids": {
+									"items": {
+										"type": "number",
+										"format": "double"
+									},
+									"type": "array"
+								},
+								"existingTagUids": {
+									"items": {
+										"type": "number",
+										"format": "double"
+									},
+									"type": "array"
+								}
+							},
+							"type": "object"
+						},
+						"type": "array"
+					},
+					"name": {
+						"type": "string"
+					},
+					"steps": {
+						"items": {},
+						"type": "array"
+					},
+					"templateFields": {}
+				},
+				"required": [
+					"templateFields"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FolderData": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"externalIdField": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"externalIdField",
+					"source"
+				],
+				"type": "object",
+				"additionalProperties": {}
+			},
+			"RunData": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"externalIdField": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"externalIdField",
+					"source"
+				],
+				"type": "object",
+				"additionalProperties": {}
+			},
+			"ExecutionData": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"externalIdField": {
+						"type": "string"
+					},
+					"caseRef": {
+						"type": "string"
+					},
+					"runRef": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"externalIdField",
+					"caseRef",
+					"runRef"
+				],
+				"type": "object",
+				"additionalProperties": {}
+			},
+			"CreateDataDto": {
+				"properties": {
+					"entities": {
+						"properties": {
+							"executions": {
+								"properties": {
+									"entries": {
+										"items": {
+											"$ref": "#/components/schemas/ExecutionData"
+										},
+										"type": "array"
+									}
+								},
+								"required": [
+									"entries"
+								],
+								"type": "object"
+							},
+							"runs": {
+								"properties": {
+									"entries": {
+										"items": {
+											"$ref": "#/components/schemas/RunData"
+										},
+										"type": "array"
+									}
+								},
+								"required": [
+									"entries"
+								],
+								"type": "object"
+							},
+							"folders": {
+								"properties": {
+									"entries": {
+										"items": {
+											"$ref": "#/components/schemas/FolderData"
+										},
+										"type": "array"
+									}
+								},
+								"required": [
+									"entries"
+								],
+								"type": "object"
+							}
+						},
+						"required": [
+							"executions",
+							"runs",
+							"folders"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"entities"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CustomFieldTypes": {
+				"type": "string",
+				"enum": [
+					"text",
+					"radio",
+					"date",
+					"step",
+					"link",
+					"checkbox",
+					"dropdown",
+					"multi",
+					"file"
+				]
+			},
+			"CreateCustomFieldDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"type": {
+						"$ref": "#/components/schemas/CustomFieldTypes"
+					},
+					"source": {
+						"type": "string"
+					},
+					"options": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateCustomFieldDto": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"type": {
+						"$ref": "#/components/schemas/CustomFieldTypes"
+					},
+					"source": {
+						"type": "string"
+					},
+					"options": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CaseQueryParams": {
+				"properties": {
+					"limit": {
+						"type": "number",
+						"format": "double"
+					},
+					"offset": {
+						"type": "number",
+						"format": "double"
+					},
+					"q": {
+						"type": "string"
+					},
+					"priority": {
+						"type": "string"
+					},
+					"tag": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"limit",
+					"offset"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateCaseDTO": {
+				"properties": {
+					"customFields": {},
+					"source": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"priority": {
+						"type": "number",
+						"format": "double"
+					},
+					"repoUID": {
+						"type": "string"
+					},
+					"parentId": {
+						"type": "number",
+						"format": "double"
+					},
+					"steps": {
+						"items": {},
+						"type": "array"
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"projectId": {
+						"type": "string"
+					},
+					"templateId": {
+						"type": "string"
+					},
+					"tagIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"customFields",
+					"source",
+					"name",
+					"repoUID",
+					"parentId",
+					"steps",
+					"externalId",
+					"projectId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "testfiesta-backend",
+		"version": "0.41.2",
+		"license": {
+			"name": "Closed"
+		},
+		"contact": {
+			"name": "TestFiesta, Inc"
+		}
+	},
+	"paths": {
+		"/v1/{handle}/projects/{key}/templates": {
+			"get": {
+				"operationId": "GetTemplates",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "createdByIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "creationStartDate",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "creationEndDate",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateTemplate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTemplateDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/templates/{id}": {
+			"get": {
+				"operationId": "GetTemplate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdateTemplate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateTemplateDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteTemplate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/{handle}/tags": {
+			"get": {
+				"operationId": "GetTags",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateTag",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTagDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/tags/{id}": {
+			"get": {
+				"operationId": "GetTag",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdateTag",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateTagDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteTag",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"success": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"success"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/{handle}/projects/{key}/shared-steps": {
+			"get": {
+				"operationId": "GetSharedSteps",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateSharedStep",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateSharedStepDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/shared-steps/{id}": {
+			"patch": {
+				"operationId": "UpdateSharedStep",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateSharedStepDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteSharedStep",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"success": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"success"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/{handle}/projects/{key}/runs": {
+			"get": {
+				"operationId": "GetTestRuns",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateTestRun",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTestRunDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/runs/{id}": {
+			"get": {
+				"operationId": "GetTestRun",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdateTestRun",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateTestRunDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/plans": {
+			"get": {
+				"operationId": "GetPlans",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "status",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "priority",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "archived",
+						"required": true,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"in": "query",
+						"name": "minRunCount",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "maxRunCount",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "minCreatedAt",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "maxCreatedAt",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "minProgress",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "maxProgress",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreatePlan",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreatePlanDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/plans/{id}": {
+			"get": {
+				"operationId": "GetPlan",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdatePlan",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdatePlanDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/milestones": {
+			"get": {
+				"operationId": "GetMilestones",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateMilestone",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateMilestoneDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/milestones/{id}": {
+			"patch": {
+				"operationId": "UpdateMilestone",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateMilestoneDTO"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteMilestone",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/{handle}/projects/{key}/folders": {
+			"get": {
+				"operationId": "GetFolders",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateFolderDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/folders/{id}": {
+			"get": {
+				"operationId": "GetFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdateFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateFolderDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteFolder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"success": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"success"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/{handle}/projects/{key}/executions": {
+			"get": {
+				"operationId": "GetExecutions",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateExecution",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateExecutionDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/executions/{id}": {
+			"get": {
+				"operationId": "GetExecution",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdateExecution",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateExecutionDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/data": {
+			"post": {
+				"operationId": "NewData",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateDataDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/customFields": {
+			"get": {
+				"operationId": "GetCustomFields",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateCustomField",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateCustomFieldDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/customFields/{id}": {
+			"patch": {
+				"operationId": "UpdateCustomField",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateCustomFieldDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteCustomField",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"success": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"success"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/{handle}/projects/{key}/cases": {
+			"get": {
+				"operationId": "GetCases",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "q",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "priority",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "tag",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateCase",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateCaseDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/{handle}/projects/{key}/cases/{id}": {
+			"get": {
+				"operationId": "GetCase",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"delete": {
+				"operationId": "DeleteCase",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"success": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"success"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "https://api.testfiesta.com/"
+		}
+	]
+}

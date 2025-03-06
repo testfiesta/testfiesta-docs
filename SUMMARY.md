@@ -255,3 +255,7 @@
 * [Organization User Workspace](account-settings/organization-user-workspace/README.md)
   * [Leaving an Organization](account-settings/organization-user-workspace/leaving-an-organization.md)
   * [Notifications](account-settings/organization-user-workspace/notifications.md)
+
+## API
+
+* [API Endpoints](api/api-endpoints.md)
