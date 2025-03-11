@@ -2,8 +2,8 @@
 
 ### Bulk Import
 
-{% openapi src="../.gitbook/assets/swagger (1).json" path="/v1/{handle}/projects/{key}/data" method="post" %}
-[swagger (1).json](<../.gitbook/assets/swagger (1).json>)
+{% openapi src="../.gitbook/assets/swagger.json" path="/v1/{handle}/projects/{key}/data" method="post" %}
+[swagger.json](<../.gitbook/assets/swagger.json>)
 {% endopenapi %}
 
 ### Templates
