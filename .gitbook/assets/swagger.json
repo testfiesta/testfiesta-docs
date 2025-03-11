@@ -3749,7 +3749,7 @@
 	},
 	"servers": [
 		{
-			"url": "https://api.testfiesta.com/"
+			"url": "https://api.testfiesta.com"
 		}
 	]
 }
