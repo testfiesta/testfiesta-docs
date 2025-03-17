@@ -35,6 +35,48 @@ API Key is prefixed with `testfiesta_`. You can use this API key in your HTTP re
 
 ⚠️ **Important**: Keep your API token secure and never share it. If your token is compromised, revoke it immediately and create a new one.
 
+
+## Pagination
+API responses that return a list of items (e.g., test cases, test runs) are paginated. The response format includes the pagination object with the following properties:
+
+- `count`: Total number of items
+- `items`: Array of items (e.g., test cases, test runs)
+
+### Query Parameters
+
+- `limit`: Number of items per page
+- `offset`: Offset of the first item in the current page
+
+### Example
+
+```http
+GET /v1/{handle}/projects/{key}/cases?limit=10&offset=0
+```
+
+Here is the example response:
+
+```json
+{
+  "count": 10,
+  "items": [
+    {
+      "uid": 1,
+      "name": "Test Case 1",
+      "description": "Description of Test Case 1",
+      "priority": 1,
+      "status": 1,
+    },
+    {
+      "uid": 2,
+      "name": "Test Case 2",
+      "description": "Description of Test Case 2",
+      "priority": 1,
+      "status": 1,
+    }
+  ]
+}
+```
+
 ## Next Steps
 
 - Check out our [API Endpoints](./api-endpoints.md) documentation for detailed information about available endpoints.
