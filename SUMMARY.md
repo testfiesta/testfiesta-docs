@@ -258,4 +258,5 @@
 
 ## API
 
+* [Getting Started](api/getting-started.md)
 * [API Endpoints](api/api-endpoints.md)
