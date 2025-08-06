@@ -259,4 +259,5 @@
 ## API
 
 * [Getting Started](api/getting-started.md)
-* [API Endpoints](api/api-endpoints.md)
+* [Core API Endpoints](api/api-endpoints.md)
+* [TestRail API Shim](api/testrail-api-shim.md)
