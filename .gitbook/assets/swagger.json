@@ -13,6 +13,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -29,6 +32,16 @@
 							"asc",
 							"desc"
 						]
+					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list"
+						]
+					},
+					"entityType": {
+						"type": "string"
 					},
 					"name": {
 						"type": "string"
@@ -48,7 +61,8 @@
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -147,6 +161,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -164,13 +181,21 @@
 							"desc"
 						]
 					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list"
+						]
+					},
 					"entityType": {
 						"type": "string"
 					}
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -248,6 +273,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -264,11 +292,22 @@
 							"asc",
 							"desc"
 						]
+					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list"
+						]
+					},
+					"entityType": {
+						"type": "string"
 					}
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -552,6 +591,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -568,6 +610,16 @@
 							"asc",
 							"desc"
 						]
+					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list"
+						]
+					},
+					"entityType": {
+						"type": "string"
 					},
 					"status": {
 						"type": "number",
@@ -650,6 +702,7 @@
 				"required": [
 					"limit",
 					"offset",
+					"queryType",
 					"archived",
 					"minRunCount",
 					"minCreatedAt",
@@ -1221,6 +1274,9 @@
 					},
 					"templateFields": {
 						"description": "The template fields for the execution.\nOptional field to update or specify template fields associated with the execution."
+					},
+					"rules": {
+						"description": "The rules for the execution.\nOptional field to update or specify rules associated with the execution."
 					}
 				},
 				"required": [
@@ -1400,6 +1456,13 @@
 					"integer"
 				]
 			},
+			"CustomFieldEntityTypes": {
+				"type": "string",
+				"enum": [
+					"testCase",
+					"testResult"
+				]
+			},
 			"CreateCustomFieldDto": {
 				"description": "Data Transfer Object for creating a new custom field.",
 				"properties": {
@@ -1421,6 +1484,13 @@
 						},
 						"type": "array",
 						"description": "The options for the custom field.\nOptional field to define the available choices for the custom field, applicable for certain types like dropdowns or radio buttons.\nShould be an array of strings representing the options."
+					},
+					"entityTypes": {
+						"items": {
+							"$ref": "#/components/schemas/CustomFieldEntityTypes"
+						},
+						"type": "array",
+						"description": "The entity types this custom field applies to.\nAn array of entity types (e.g., 'testCase', 'testResult') that this custom field can be used with."
 					}
 				},
 				"required": [
@@ -1450,6 +1520,13 @@
 						},
 						"type": "array",
 						"description": "The options for the custom field.\nOptional field to update or add new options for the custom field.\nShould be an array of strings representing the updated options."
+					},
+					"entityTypes": {
+						"items": {
+							"$ref": "#/components/schemas/CustomFieldEntityTypes"
+						},
+						"type": "array",
+						"description": "The entity types this custom field applies to.\nOptional field to update the entity types that this custom field can be used with."
 					}
 				},
 				"type": "object",
@@ -1460,6 +1537,9 @@
 					"limit": {
 						"type": "number",
 						"format": "double"
+					},
+					"cursor": {
+						"type": "string"
 					},
 					"offset": {
 						"type": "number",
@@ -1478,6 +1558,16 @@
 							"desc"
 						]
 					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list"
+						]
+					},
+					"entityType": {
+						"type": "string"
+					},
 					"priority": {
 						"type": "string"
 					},
@@ -1487,7 +1577,8 @@
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -1595,7 +1686,7 @@
 	},
 	"info": {
 		"title": "testfiesta-backend",
-		"version": "0.67.1",
+		"version": "0.75.6",
 		"license": {
 			"name": "Closed"
 		},
@@ -1649,6 +1740,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -1682,6 +1781,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
@@ -1963,6 +2082,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -1996,6 +2123,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
@@ -2216,6 +2363,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2249,6 +2404,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -2504,6 +2679,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2537,6 +2720,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -2765,6 +2968,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2798,6 +3009,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -2886,6 +3117,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2919,6 +3158,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
@@ -3260,6 +3519,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -3293,6 +3560,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -3549,6 +3836,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -3582,6 +3877,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -3838,6 +4153,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -3871,6 +4194,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -4111,6 +4454,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -4144,6 +4495,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -4397,6 +4768,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -4430,6 +4809,26 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
