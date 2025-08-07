@@ -8,7 +8,7 @@
   "servers": [
     {
       "url": "http://api.testfiesta.com/trv2/{handle}/",
-      "description": "Local development server",
+      "description": "TestFiesta TRv2 API",
       "variables": {
         "handle": {
           "default": "{org-handle}",
