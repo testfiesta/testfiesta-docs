@@ -18,6 +18,8 @@ The Chart Library houses the various charts to include in your Dashboard. Below 
 
 <div><figure><img src="../../../../.gitbook/assets/440_Charts library_SV (1).png" alt=""><figcaption><p>Single Value, Donut, &#x26; Line charts with explanations of each.</p></figcaption></figure> <figure><img src="../../../../.gitbook/assets/440_Charts library_B (1).png" alt=""><figcaption><p>Bar charts with explanations of different datapoints.</p></figcaption></figure></div>
 
+
+
 ## Adding a chart to your Dashboard
 
 To include a chart in the Dashboard of your project, click on the "Add" button next to the chart you wish to add. Confirm your selection by clicking "Add" or to go back click "Cancel"
@@ -26,8 +28,8 @@ To include a chart in the Dashboard of your project, click on the "Add" button n
 
 ## Adjusting Chart Data Colors
 
-You can select "Change data colors" in the Chart Library to sort and customize the different colors used to outline information. Refer to the [Data Colors](../../../../organization-owner-workspace/data-colors.md) section of the documentation for more info.
+You can select "Change data colors" in the Chart Library to sort and customize the different colors used to outline information. Refer to the [Data Colors](../../../../account-settings/organization-owner-workspace/data-colors.md) section of the documentation for more info.
 
-<figure><img src="../../../../.gitbook/assets/441_Charts library_Data Colors (1).png" alt=""><figcaption><p>In the Chart Library click on the change data colors button to adjust the view of your charts.</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/441_Charts library_Data Colors (1).png" alt=""><figcaption><p>In the Chart Library click on the change data colors button to adjust the view of your charts. </p></figcaption></figure>
 
-If you need to further adjust the Dashboard, the next page will show you how to duplicate, expand, and delete charts. Click "Next"
+If you need to further adjust the Dashboard, the next page will show you how to duplicate, expand, and delete charts. Click "Next"&#x20;

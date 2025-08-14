@@ -1,6 +1,6 @@
 # Table of contents
 
-* [🎉 Partying with TestFiestaf](README.md)
+* [🎉 Partying with TestFiesta](README.md)
 
 ## Getting Started
 
@@ -239,45 +239,22 @@
     * [🟡 TestFiesta Plans](account-settings/personal-workspace/billing/testfiesta-plans.md)
     * [Adding/Updating Payment Methods](account-settings/personal-workspace/billing/adding-updating-payment-methods.md)
   * [Data colors](account-settings/personal-workspace/data-colors.md)
-
-***
-
-* [Organization Owner Workspace](organization-owner-workspace/README.md)
-  * [API Keys](organization-owner-workspace/api-keys/README.md)
-    * [Creating API Keys](organization-owner-workspace/api-keys/creating-api-keys.md)
-  * [Authentication](organization-owner-workspace/authentication/README.md)
-    * [Password policy](organization-owner-workspace/authentication/password-policy.md)
-    * [Two-Factor Authentication (2FA)](organization-owner-workspace/authentication/two-factor-authentication-2fa.md)
-    * [Inactive Timeout](organization-owner-workspace/authentication/inactive-timeout.md)
-    * [Single sign-on (SSO)](organization-owner-workspace/authentication/single-sign-on-sso.md)
-    * [Authentication Protocols](organization-owner-workspace/authentication/authentication-protocols.md)
-  * [Audit Log](organization-owner-workspace/audit-log.md)
-  * [Storage](organization-owner-workspace/storage.md)
-  * [Data colors](organization-owner-workspace/data-colors.md)
-  * [🟡 Billing](organization-owner-workspace/billing.md)
-* [Organization User Workspace](organization-user-workspace/README.md)
-  * [Leaving an Organization](organization-user-workspace/leaving-an-organization.md)
-  * [Notifications](organization-user-workspace/notifications.md)
-
-## Automation
-
-* [Tacotruck CLI](automation/settings-overview.md)
-* [Languages and Frameworks](automation/languages-and-frameworks/README.md)
-  * [python](automation/languages-and-frameworks/python/README.md)
-    * [Django](automation/languages-and-frameworks/python/django.md)
-    * [Flask](automation/languages-and-frameworks/python/flask.md)
-  * [Java](automation/languages-and-frameworks/java/README.md)
-    * [Spring Boot](automation/languages-and-frameworks/java/spring-boot.md)
-    * [Maven](automation/languages-and-frameworks/java/maven.md)
-  * [JavaScript](automation/languages-and-frameworks/javascript/README.md)
-    * [Node.js](automation/languages-and-frameworks/javascript/node.js.md)
-    * [React](automation/languages-and-frameworks/javascript/react.md)
-  * [Go](automation/languages-and-frameworks/go.md)
-* [CI-CD Integration](automation/ci-cd-integration/README.md)
-  * [GitHub Actions](automation/ci-cd-integration/github-actions.md)
-  * [GitLab CI](automation/ci-cd-integration/gitlab-ci.md)
-  * [Jenkins](automation/ci-cd-integration/jenkins.md)
-  * [CircleCI](automation/ci-cd-integration/circle-ci.md)
+* [Organization Owner Workspace](account-settings/organization-owner-workspace/README.md)
+  * [API Keys](account-settings/organization-owner-workspace/api-keys/README.md)
+    * [Creating API Keys](account-settings/organization-owner-workspace/api-keys/creating-api-keys.md)
+  * [Authentication](account-settings/organization-owner-workspace/authentication/README.md)
+    * [Password policy](account-settings/organization-owner-workspace/authentication/password-policy.md)
+    * [Two-Factor Authentication (2FA)](account-settings/organization-owner-workspace/authentication/two-factor-authentication-2fa.md)
+    * [Inactive Timeout](account-settings/organization-owner-workspace/authentication/inactive-timeout.md)
+    * [Single sign-on (SSO)](account-settings/organization-owner-workspace/authentication/single-sign-on-sso.md)
+    * [Authentication Protocols](account-settings/organization-owner-workspace/authentication/authentication-protocols.md)
+  * [Audit Log](account-settings/organization-owner-workspace/audit-log.md)
+  * [Storage](account-settings/organization-owner-workspace/storage.md)
+  * [Data colors](account-settings/organization-owner-workspace/data-colors.md)
+  * [🟡 Billing](account-settings/organization-owner-workspace/billing.md)
+* [Organization User Workspace](account-settings/organization-user-workspace/README.md)
+  * [Leaving an Organization](account-settings/organization-user-workspace/leaving-an-organization.md)
+  * [Notifications](account-settings/organization-user-workspace/notifications.md)
 
 ## API
 
