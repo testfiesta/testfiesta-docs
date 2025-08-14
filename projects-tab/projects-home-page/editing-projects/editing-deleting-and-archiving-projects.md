@@ -8,23 +8,23 @@ description: >-
 
 <details>
 
-<summary>Deleting a Project vs Archiving it </summary>
+<summary>Deleting a Project vs Archiving it</summary>
 
-Deleting a Project will remove it from Active and Archived views on the Project Lists page. All data associated with a deleted Project will be removed & a deleted Project can only be recovered by an Administrator via the [Audit Log](../../../account-settings/organization-owner-workspace/audit-log.md).
+Deleting a Project will remove it from Active and Archived views on the Project Lists page. All data associated with a deleted Project will be removed & a deleted Project can only be recovered by an Administrator via the [Audit Log](../../../organization-owner-workspace/audit-log.md).
 
 </details>
 
-<figure><img src="../../../.gitbook/assets/Delete Vs Archive New.PNG" alt=""><figcaption><p>A deleted Project can only be recovered by an Administrator via the <a href="../../../account-settings/organization-owner-workspace/audit-log.md">Audit Log</a>.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Delete Vs Archive New.PNG" alt=""><figcaption><p>A deleted Project can only be recovered by an Administrator via the <a href="../../../organization-owner-workspace/audit-log.md">Audit Log</a>.</p></figcaption></figure>
 
 <details>
 
 <summary>How to change Project status</summary>
 
-Click on the kebab icon next to a Project, then select "Archive" or "Unarchive" to change the Project status. You will receive a notification confirming your choice and the option to proceed or cancel the request.&#x20;
+Click on the kebab icon next to a Project, then select "Archive" or "Unarchive" to change the Project status. You will receive a notification confirming your choice and the option to proceed or cancel the request.
 
 </details>
 
-<div><figure><img src="../../../.gitbook/assets/Archive_new.PNG" alt=""><figcaption><p>Notification given when Archiving a Project. </p></figcaption></figure> <figure><img src="../../../.gitbook/assets/Unarchive_New.PNG" alt=""><figcaption><p>Notification given when Unarchiving a Project. </p></figcaption></figure></div>
+<div><figure><img src="../../../.gitbook/assets/Archive_new.PNG" alt=""><figcaption><p>Notification given when Archiving a Project.</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/Unarchive_New.PNG" alt=""><figcaption><p>Notification given when Unarchiving a Project.</p></figcaption></figure></div>
 
 <details>
 
@@ -39,7 +39,7 @@ Click on the kebab menu on a Project, and next, select the "Delete" option. A no
 <figure><img src="../../../.gitbook/assets/Delete Project New.PNG" alt=""><figcaption><p>A notification will appear when you try to delete a Project.</p></figcaption></figure>
 
 {% hint style="info" %}
-Note that a deleted Project can only be recovered by an Administrator via the [Audit Log](../../../account-settings/organization-owner-workspace/audit-log.md).
+Note that a deleted Project can only be recovered by an Administrator via the [Audit Log](../../../organization-owner-workspace/audit-log.md).
 {% endhint %}
 
 <details>
@@ -50,6 +50,6 @@ Click on the pencil icon next to the Project name. From here you can change the 
 
 </details>
 
-<figure><img src="../../../.gitbook/assets/377_Projects 18_Project list - Edit - Selected users_Back (1).png" alt=""><figcaption><p>When editing Project information click on the pencil icon to change the name and description. </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/377_Projects 18_Project list - Edit - Selected users_Back (1).png" alt=""><figcaption><p>When editing Project information click on the pencil icon to change the name and description.</p></figcaption></figure>
 
-Need to add more users to your Project? The next page will show you how to use the edit Project function. Click "Next"&#x20;
+Need to add more users to your Project? The next page will show you how to use the edit Project function. Click "Next"
