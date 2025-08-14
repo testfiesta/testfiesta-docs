@@ -256,6 +256,38 @@
   * [Leaving an Organization](account-settings/organization-user-workspace/leaving-an-organization.md)
   * [Notifications](account-settings/organization-user-workspace/notifications.md)
 
+## Automation
+
+* [Tacotruck CLI](automation/tacotruck-cli.md)
+* [Testing Tools](automation/testing-tools/README.md)
+  * [JavaScript](automation/testing-tools/javascript/README.md)
+    * [Bun](automation/testing-tools/javascript/bun.md)
+    * [Deno](automation/testing-tools/javascript/deno.md)
+    * [Jest](automation/testing-tools/javascript/jest.md)
+    * [Mocha](automation/testing-tools/javascript/mocha.md)
+    * [Playwright](automation/testing-tools/javascript/playwright.md)
+    * [Vitest](automation/testing-tools/javascript/vitest.md)
+  * [NET](automation/testing-tools/.net/README.md)
+    * [NUnit](automation/testing-tools/.net/nunit.md)
+  * [Go](automation/testing-tools/go/README.md)
+    * [Testing](automation/testing-tools/go/testing.md)
+  * [PHP](automation/testing-tools/php/README.md)
+    * [PHPUnit](automation/testing-tools/php/phpunit.md)
+    * [PestPHP](automation/testing-tools/php/pestphp.md)
+  * [Python](automation/testing-tools/python/README.md)
+    * [Pytest](automation/testing-tools/python/pytest.md)
+  * [Ruby](automation/testing-tools/ruby/README.md)
+    * [RSpec](automation/testing-tools/ruby/rspec.md)
+  * [Rust](automation/testing-tools/rust/README.md)
+    * [Cargo Test](automation/testing-tools/rust/cargo-test.md)
+  * [Elixir](automation/testing-tools/elixir/README.md)
+    * [ExUnit](automation/testing-tools/elixir/exunit.md)
+* [CI-CD Integration](automation/ci-cd-integration/README.md)
+  * [CircleCI](automation/ci-cd-integration/circleci.md)
+  * [Jenkins](automation/ci-cd-integration/jenkins.md)
+  * [GitLab CI](automation/ci-cd-integration/gitlab-ci.md)
+  * [GitHub Actions](automation/ci-cd-integration/github-actions.md)
+
 ## API
 
 * [Getting Started](api/getting-started.md)
