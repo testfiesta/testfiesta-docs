@@ -23,7 +23,7 @@ Jest is a delightful JavaScript Testing Framework with a focus on simplicity.It 
 
 **Install tacotruck cli**&#x20;
 
-{% code overflow="wrap" fullWidth="true" %}
+{% code overflow="wrap" fullWidth="false" %}
 ```javascript
 $ npm install -g @testfiesta/tacotruck
 $ tacotruck -h
@@ -33,12 +33,12 @@ Usage: tacotruck [options] [command]
 ```
 {% endcode %}
 
-Submit test results
+**Submit test results**
 
 {% tabs %}
 {% tab title="Testfiesta Example" %}
 ```
-testmo testfiesta \
+tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
   --handle orgHandle \
@@ -49,7 +49,7 @@ testmo testfiesta \
 
 {% tab title="Testrail Example" %}
 ```
-testmo testrail \
+tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
   --email username@example.com \
