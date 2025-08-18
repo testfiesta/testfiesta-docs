@@ -263,7 +263,6 @@
   * [JavaScript](automation/testing-tools/javascript/README.md)
     * [Jest](automation/testing-tools/javascript/jest.md)
     * [Vitest](<automation/testing-tools/javascript/vitest (1).md>)
-    * [Vitest](automation/testing-tools/javascript/vitest.md)
     * [Bun](automation/testing-tools/javascript/bun.md)
     * [Deno](automation/testing-tools/javascript/deno.md)
     * [Mocha](automation/testing-tools/javascript/mocha.md)
