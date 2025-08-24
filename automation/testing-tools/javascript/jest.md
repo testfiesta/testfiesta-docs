@@ -43,6 +43,7 @@ tacotruck testfiesta \
   --token testfiesta_... \
   --handle orgHandle \
   --key projectKey \
+  --name runName \
   --data results-path/*.xml
 ```
 {% endtab %}
