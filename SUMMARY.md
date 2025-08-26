@@ -280,7 +280,7 @@
   * [Ruby](automation/testing-tools/ruby/README.md)
     * [RSpec](automation/testing-tools/ruby/rspec.md)
   * [Rust](automation/testing-tools/rust/README.md)
-    * [Cargo Test](automation/testing-tools/rust/cargo-test.md)
+    * [Cargo test](automation/testing-tools/rust/cargo-test.md)
   * [Elixir](automation/testing-tools/elixir/README.md)
     * [ExUnit](automation/testing-tools/elixir/exunit.md)
 * [CI-CD Integration](automation/ci-cd-integration/README.md)
