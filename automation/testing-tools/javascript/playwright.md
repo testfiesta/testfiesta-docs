@@ -19,7 +19,7 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/Playwright_Logo.svg" alt=""><figcaption></figcaption></figure>
 
-Playwright Test is an end-to-end test framework for modern web apps. It bundles test runner, assertions, isolation, parallelization and rich tooling. Playwright can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Playweight`](https://mochajs.org/#installation)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple jest  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-playwright-tf) &#x20;
+Playwright Test is an end-to-end test framework for modern web apps. It bundles test runner, assertions, isolation, parallelization and rich tooling. Playwright can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Playweight`](https://mochajs.org/#installation)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple playwrite  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-playwright-tf) &#x20;
 
 **Install tacotruck cli** &#x20;
 

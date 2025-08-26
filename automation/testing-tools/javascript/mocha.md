@@ -19,7 +19,7 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/Mocha_logo.svg" alt="" width="256"><figcaption></figcaption></figure>
 
-Mocha is a feature-rich JavaScript test framework running on [Node.js](https://nodejs.org/) and in the browser, making asynchronous testing _simple_ and _fun_. Mocha can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Mocha`](https://mochajs.org/#installation)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple jest  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-mocha-tf) &#x20;
+Mocha is a feature-rich JavaScript test framework running on [Node.js](https://nodejs.org/) and in the browser, making asynchronous testing _simple_ and _fun_. Mocha can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Mocha`](https://mochajs.org/#installation)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple mocha  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-mocha-tf) &#x20;
 
 **Install tacotruck cli** &#x20;
 
