@@ -11,6 +11,7 @@
 * [✍️ Organizing Tests](getting-started/organizing-tests/README.md)
   * [Manage Testing Process](getting-started/organizing-tests/manage-testing-process.md)
 * [👥 Invite Team Members](getting-started/invite-team-members.md)
+* [🚀 TestRail Integration](getting-started/testrail-integration.md)
 
 ## Projects Tab
 
@@ -271,16 +272,15 @@
     * [NUnit](automation/testing-tools/.net/nunit.md)
   * [Go](automation/testing-tools/go/README.md)
     * [Testing](automation/testing-tools/go/testing.md)
-    * [Testify](automation/testing-tools/go/testify.md)
   * [PHP](automation/testing-tools/php/README.md)
-    * [PHP unit](automation/testing-tools/php/php-unit.md)
+    * [PHPUnit](automation/testing-tools/php/phpunit.md)
     * [PestPHP](automation/testing-tools/php/pestphp.md)
   * [Python](automation/testing-tools/python/README.md)
     * [Pytest](automation/testing-tools/python/pytest.md)
   * [Ruby](automation/testing-tools/ruby/README.md)
     * [RSpec](automation/testing-tools/ruby/rspec.md)
   * [Rust](automation/testing-tools/rust/README.md)
-    * [Cargo test](automation/testing-tools/rust/cargo-test.md)
+    * [Cargo Test](automation/testing-tools/rust/cargo-test.md)
   * [Elixir](automation/testing-tools/elixir/README.md)
     * [ExUnit](automation/testing-tools/elixir/exunit.md)
 * [CI-CD Integration](automation/ci-cd-integration/README.md)
