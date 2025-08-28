@@ -1,11 +1,11 @@
 ---
 description: >-
-  With TestFiesta's TestRail integration, you'll be able to migrate all of your
-  TestRail data into TestFiesta in a matter of minutes! It's easy, just follow
-  these simple steps!
+  With TestFiesta's full TestRail integration, you'll be able to migrate all of
+  your TestRail data into TestFiesta in a matter of minutes! It's easy, just
+  follow these simple steps!
 ---
 
-# 🚀 TestRail Integration
+# 🚀 TestRail Migration
 
 ## Checklist:
 
@@ -13,7 +13,7 @@ description: >-
 
 {% embed url="https://youtu.be/yikDrWIun6g" %}
 
-For more information about TestFiesta & it's impressive features click here: [https://www.testfiesta.com/](https://www.testfiesta.com/)
+For more information about **TestFiesta** & it's **impressive features** click here: [**https://www.testfiesta.com/**](https://www.testfiesta.com/)
 
 <details>
 

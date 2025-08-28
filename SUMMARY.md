@@ -11,7 +11,7 @@
 * [✍️ Organizing Tests](getting-started/organizing-tests/README.md)
   * [Manage Testing Process](getting-started/organizing-tests/manage-testing-process.md)
 * [👥 Invite Team Members](getting-started/invite-team-members.md)
-* [🚀 TestRail Integration](getting-started/testrail-integration.md)
+* [🚀 TestRail Migration](getting-started/testrail-migration.md)
 
 ## Projects Tab
 
