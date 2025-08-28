@@ -5,6 +5,6 @@ description: >-
   might create and aim to complete.
 ---
 
-# 🟡 Test Plans Tab
+# Test Plans Tab
 
-Test plans are separated into two tabs: Active and Archived. Click "Next" to learn the difference between the tabs.&#x20;
+Test plans are separated into two tabs: Active and Archived. Click "Next" to learn the difference between the tabs.

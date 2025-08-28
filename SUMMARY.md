@@ -58,7 +58,7 @@
   * [Deleting Milestones](projects-tab/milestones-tab/deleting-milestones.md)
   * [Filtering Milestones](projects-tab/milestones-tab/filtering-milestones.md)
   * [Editing Milestones](projects-tab/milestones-tab/editing-milestones.md)
-* [🟡 Test Plans Tab](projects-tab/test-plans-tab/README.md)
+* [Test Plans Tab](projects-tab/test-plans-tab/README.md)
   * [Active & Archived Tabs](projects-tab/test-plans-tab/active-and-archived-tabs.md)
   * [Table View and Changing Columns](projects-tab/test-plans-tab/table-view-and-changing-columns.md)
   * [Filter Test Plans](projects-tab/test-plans-tab/filter-test-plans.md)
