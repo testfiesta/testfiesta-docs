@@ -7,6 +7,12 @@ description: >-
 
 # 🚀 TestRail Integration
 
+## Checklist:
+
+* [ ] Create a TestFiesta account & organization: [https://app.testfiesta.com/signup](https://app.testfiesta.com/signup)
+
+For more information about TestFiesta & it's impressive features click here: [https://www.testfiesta.com/](https://www.testfiesta.com/)
+
 {% embed url="https://youtu.be/QIDRVE-tkhc" %}
 
 <details>
