@@ -19,9 +19,9 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/vitest-8x.png" alt=""><figcaption></figcaption></figure>
 
-Vitest is a fast and lightweight testing framework built on Vite. It offers  API for unit, integration, and component testing, and works seamlessly with modern JavaScript and TypeScript projects like [React](https://reactjs.org/), [Vue](https://vuejs.org/) , and others. Vitest can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`vitest`](https://vitest.dev/guide/) package and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple vitest  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-jest-tf) &#x20;
+Vitest is a fast and lightweight testing framework built on Vite. It offers API for unit, integration, and component testing, and works seamlessly with modern JavaScript and TypeScript projects like [React](https://reactjs.org/), [Vue](https://vuejs.org/) , and others. Vitest can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`vitest`](https://vitest.dev/guide/) package and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-jest-tf)
 
-**Install tacotruck cli** &#x20;
+**Install tacotruck cli**
 
 {% code overflow="wrap" fullWidth="false" %}
 ```javascript
@@ -60,4 +60,3 @@ tacotruck testrail \
 ```
 {% endtab %}
 {% endtabs %}
-
