@@ -6,7 +6,7 @@ A GitLab CI integration for uploading test results to TestFiesta and TestRail.&#
 
 ### Usage <a href="#user-content-usage" id="user-content-usage"></a>
 
-#### Option 1: Use as a CI/CD Component <a href="#user-content-option-1-use-as-a-cicd-component-recommended" id="user-content-option-1-use-as-a-cicd-component-recommended"></a>
+#### Use as a CI/CD Component <a href="#user-content-option-1-use-as-a-cicd-component-recommended" id="user-content-option-1-use-as-a-cicd-component-recommended"></a>
 
 The component approach provides the most flexibility and is the recommended way to use TacoTruck.
 
