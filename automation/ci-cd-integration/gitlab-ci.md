@@ -1,2 +1,104 @@
 # GitLab CI
 
+## TacoTruck GitLab CI Integration
+
+A GitLab CI integration for uploading test results to TestFiesta and TestRail.&#x20;
+
+### Usage <a href="#user-content-usage" id="user-content-usage"></a>
+
+#### Option 1: Use as a CI/CD Component <a href="#user-content-option-1-use-as-a-cicd-component-recommended" id="user-content-option-1-use-as-a-cicd-component-recommended"></a>
+
+The component approach provides the most flexibility and is the recommended way to use TacoTruck.
+
+**Testfiesta**&#x20;
+
+```
+include:
+  - component: gitlab.com/testfiesta/tacotruck-gitlab/tacotruck@v<latest version>
+    inputs:
+      stage: report
+      provider: "testfiesta" # Options: "testfiesta", "testrail", "all"
+      results_path: "./test-results.xml"
+      base_url: "https://api.testfiesta.com"
+      project: "your-project-key"
+      handle: "your-org-handle"
+      api_key: "your-api-key"
+      run_name: "CI Pipeline Run ${CI_PIPELINE_ID}"
+
+stages:
+  - test
+  - report
+
+run-tests:
+  stage: test
+  script:
+    - npm test
+   artifacts:
+    paths:
+      - test-results.xml
+    reports:
+      junit: test-results.xml
+
+# The component automatically provides the submit-run job
+# No need to extend or define additional jobs
+```
+
+Testrail&#x20;
+
+```
+include:
+  - component: gitlab.com/testfiesta/tacotruck-gitlab/tacotruck@v<latest version>
+    inputs:
+      stage: report
+      provider: "testrail" # Options: "testfiesta", "testrail", "all"
+      results_path: "./test-results.xml"
+      base_url: "https://<your-username>.testrail.io"
+      project: "your-project-id"
+      email: "your-email"
+      password: "your-password"
+      run_name: "CI Pipeline Run ${CI_PIPELINE_ID}"
+
+stages:
+  - test
+  - report
+
+run-tests:
+  stage: test
+  script:
+    - npm test
+   artifacts:
+    paths:
+      - test-results.xml
+    reports:
+      junit: test-results.xml
+
+# The component automatically provides the submit-run job
+# No need to extend or define additional jobs
+```
+
+**Available Job**
+
+**Available Job**
+
+When using the template, you have access to this job:
+
+* `submit-run`: Main job for conditional reporting (supports TestFiesta, TestRail, or both)
+
+### Configuration <a href="#user-content-configuration" id="user-content-configuration"></a>
+
+#### Component Inputs <a href="#user-content-component-inputs-option-1" id="user-content-component-inputs-option-1"></a>
+
+When using the component , configure these inputs:
+
+| Input          | Description                                       | Default             | Required         |
+| -------------- | ------------------------------------------------- | ------------------- | ---------------- |
+| `stage`        | Pipeline stage for the job                        | `"report"`          | No               |
+| `provider`     | Provider type: "testfiesta", "testrail", or "all" | `"all"`             | No               |
+| `results_path` | Path to test results XML file                     | `"${RESULTS_PATH}"` | Yes              |
+| `base_url`     | Base URL for the provider                         | `"${BASE_URL}"`     | Yes              |
+| `project`      | Project key (TestFiesta) or ID (TestRail)         | `"${PROJECT}"`      | Yes              |
+| `run_name`     | Name for the test run                             | `"${RUN_NAME}"`     | No               |
+| `handle`       | Organization handle (TestFiesta only)             | `"${HANDLE}"`       | Yes (TestFiesta) |
+| `api_key`      | API key (TestFiesta only)                         | `"${API_KEY}"`      | Yes (TestFiesta) |
+| `username`     | Username (TestRail only)                          | `"${USERNAME}"`     | Yes (TestRail)   |
+| `password`     | Password (TestRail only)                          | `"${PASSWORD}"`     | Yes (TestRail)   |
