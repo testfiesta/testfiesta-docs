@@ -12,6 +12,8 @@ The component approach provides the most flexibility and is the recommended way 
 
 **Testfiesta**&#x20;
 
+### Testfiesta
+
 ```
 include:
   - component: gitlab.com/testfiesta/tacotruck-gitlab/tacotruck@v<latest version>
@@ -22,7 +24,7 @@ include:
       base_url: "https://api.testfiesta.com"
       project: "your-project-key"
       handle: "your-org-handle"
-      api_key: "your-api-key"
+      api_key: "$TESTFIESTA_API_KEY"
       run_name: "CI Pipeline Run ${CI_PIPELINE_ID}"
 
 stages:
@@ -43,7 +45,18 @@ run-tests:
 # No need to extend or define additional jobs
 ```
 
-Testrail&#x20;
+**Setup**
+
+1. **Get your API token:**
+   * Go to Testfiesta dashboard → Settings → API Tokens
+   * Generate a new token
+2.  **Add to Gitlab CI/CD variables:**
+
+    ```
+    TESTFIESTA_API_KEY = "your-api-key" 
+    ```
+
+### Testrail
 
 ```
 include:
@@ -54,8 +67,8 @@ include:
       results_path: "./test-results.xml"
       base_url: "https://<your-username>.testrail.io"
       project: "your-project-id"
-      email: "your-email"
-      password: "your-password"
+      email: "$USERNAME"
+      password: "$PASSWORD"
       run_name: "CI Pipeline Run ${CI_PIPELINE_ID}"
 
 stages:
@@ -76,7 +89,14 @@ run-tests:
 # No need to extend or define additional jobs
 ```
 
-**Available Job**
+**Setup**
+
+1.  **Add to Gitlab CI/CD variables:**
+
+    ```
+    USERNAME = "your-username"
+    PASSWORD = "your-password"
+    ```
 
 **Available Job**
 
