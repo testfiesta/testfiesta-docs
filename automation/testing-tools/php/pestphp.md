@@ -23,6 +23,15 @@ layout:
 
 Pest is a testing framework with a focus on simplicity,meticulously designed to bring back the joy of testing in PHP. Pest  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Pest`](https://pestphp.com/docs/installation) and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple pest  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-pestphp-tf) &#x20;
 
+**Generate xml report file**&#x20;
+
+To genereate xml file  report  of the test logger and log file path should be included in command&#x20;
+
+```javascript
+// test report command
+./vendor/bin/phpunit --log-junit=test-reports/test-results.xml
+```
+
 **Install tacotruck cli** &#x20;
 
 {% code overflow="wrap" fullWidth="false" %}

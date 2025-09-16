@@ -21,7 +21,17 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/rspec-plain-wordmark-8x-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
-RSpec is a behavior-driven development (BDD) testing framework for the Ruby programming language, widely used for testing Ruby code and, notably, Ruby on Rails applications.RSpec  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple RSpec   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-rspec-tf) &#x20;
+RSpec is a behavior-driven development (BDD) testing framework for the Ruby programming language, widely used for testing Ruby code and, notably, Ruby on Rails applications.RSpec  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple RSpec   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-rspec-tf)   \
+
+
+**Generate xml report file**&#x20;
+
+To genereate xml file report,  report file path should be included in command&#x20;
+
+```javascript
+// test report command
+bundle exec rspec --format documentation --format RspecJunitFormatter --out spec/reports/test-results.xml
+```
 
 **Install tacotruck cli** &#x20;
 

@@ -23,6 +23,15 @@ layout:
 
 The `pytest` framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries. pytest unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple pytest   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-pytest-tf) &#x20;
 
+**Generate xml report file**&#x20;
+
+To genereate xml file, report  file path should be included in command&#x20;
+
+```javascript
+// pytest test command
+pytest --junitxml=test-results.xml
+```
+
 **Install tacotruck cli** &#x20;
 
 {% code overflow="wrap" fullWidth="false" %}

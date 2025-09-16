@@ -21,7 +21,16 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/PHPUnit_Logo.svg" alt=""><figcaption></figcaption></figure>
 
-PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks. PHP unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple PHPunit   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-testify-tf) &#x20;
+PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks. PHP unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple PHPunit   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-phpunit-tf) &#x20;
+
+**Generate xml report file**&#x20;
+
+To genereate xml file  report  of the test logger and log file path should be included in command&#x20;
+
+```javascript
+// test report command
+./vendor/bin/phpunit --log-junit=test-reports/test-results.xml
+```
 
 **Install tacotruck cli** &#x20;
 
