@@ -23,6 +23,8 @@ Playwright Test is an end-to-end test framework for modern web apps. It bundles 
 
 **Configuration**
 
+To generate xml report file  resport  output type and file name path should be configured in config file
+
 ```javascript
 //playwright.config.js
 

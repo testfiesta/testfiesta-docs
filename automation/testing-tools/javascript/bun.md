@@ -23,6 +23,8 @@ Bun ships with a fast, built-in, Jest-compatible test runner that runs directly 
 
 **Configuration**
 
+To generate xml report file  resport  output type and  file name ptah  should be configured in  test command scripts section  of package.json
+
 ```javascript
 //package.json
 

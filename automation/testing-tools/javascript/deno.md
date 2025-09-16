@@ -23,6 +23,8 @@ Deno provides a built-in test runner for writing and running tests in both JavaS
 
 **Configuration**
 
+To generate xml report file  resport  output type and  file name ptah  should be configured in  test command scripts section  of done.json
+
 ```javascript
 //deno.json
 

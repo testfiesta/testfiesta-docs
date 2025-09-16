@@ -23,6 +23,8 @@ Mocha is a feature-rich JavaScript test framework running on [Node.js](https://n
 
 **Configuration**
 
+To generate xml report file  resport  output type and  file name ptah  should be configured in  test command scripts section  of package.json
+
 ```javascript
 //package.json
 {

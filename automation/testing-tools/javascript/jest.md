@@ -23,6 +23,8 @@ Jest is a delightful JavaScript Testing Framework with a focus on simplicity.It 
 
 **Configuration**
 
+To generate xml report file  resport  output type,  folder and file name should be configured in config file
+
 ```javascript
 //jest.config.js
 

@@ -23,6 +23,8 @@ Vitest is a fast and lightweight testing framework built on Vite. It offers  API
 
 **Configuration**
 
+To generate xml report file  report  output type,  file name path should be configured in config file
+
 ```javascript
 //vitest.config.ts
 
