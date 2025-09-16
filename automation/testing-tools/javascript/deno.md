@@ -21,6 +21,18 @@ layout:
 
 Deno provides a built-in test runner for writing and running tests in both JavaScript and TypeScript. Deno can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Deno`](https://docs.deno.com/runtime/)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple Deno  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-deno-tf) &#x20;
 
+**Configuration**
+
+```javascript
+//deno.json
+
+{
+  "tasks": {
+    "test:report": "deno test --junit-path=./test-results.xml"
+  }
+}
+```
+
 **Install tacotruck cli** &#x20;
 
 {% code overflow="wrap" fullWidth="false" %}
