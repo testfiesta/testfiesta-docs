@@ -5,7 +5,7 @@ description: >-
   follow these simple steps!
 ---
 
-# 🚀 TestRail Migration
+# TestRail API Integration Guide
 
 ## Checklist:
 
@@ -94,7 +94,7 @@ Experiencing issues? See troubleshoot
 **1) Getting an API error within TestFiesta?** \
 \
 **Enable the API within TestRail:** Be sure to enable the API from with "Admin">"Site Settings">"API" check both boxes & save settings. Then try again.\
-![](<../.gitbook/assets/image (48).png>)\
+![](<../../.gitbook/assets/image (48).png>)\
 \
 **2) Not seeing your integrated project?**\
 \
@@ -103,3 +103,5 @@ Be sure that a project is selected within TestFiesta otherwise if you still do n
 **Still experiencing issues?** Contact our team of experts, we will get back to you right away! [**https://www.testfiesta.com/contact-us**](https://www.testfiesta.com/contact-us)
 
 </details>
+
+Learn to take a deep dive into the TestRail API integration & to find out more about what exactly get migrated, Click "Next" to open "TestRail API Integration Deep Dive".
