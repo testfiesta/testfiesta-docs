@@ -11,14 +11,17 @@
 * [✍️ Organizing Tests](getting-started/organizing-tests/README.md)
   * [Manage Testing Process](getting-started/organizing-tests/manage-testing-process.md)
 * [👥 Invite Team Members](getting-started/invite-team-members.md)
-* [🥳 TestFiesta For TestRail Users](getting-started/readme/README.md)
-  * [Getting Started](getting-started/readme/getting-started.md)
-  * [Migrating From TestRail](getting-started/readme/migrating-from-testrail.md)
-  * [Integrations For TestRail Users](getting-started/readme/integrations-for-testrail-users.md)
-  * [TestRail API Integration Guide](getting-started/readme/testrail-api-integration-guide.md)
-  * [TestRail API Integration Deep Dive](getting-started/readme/testrail-api-integration-deep-dive.md)
-  * [Terminology and Methodology Differences](getting-started/readme/terminology-and-methodology-differences.md)
-  * [API & Automation](getting-started/readme/api-and-automation.md)
+
+## TestFiesta For TestRail Users
+
+* [TestFiesta For TestRail Users](testfiesta-for-testrail-users/readme/README.md)
+  * [Getting Started](testfiesta-for-testrail-users/readme/getting-started.md)
+  * [Migrating From TestRail](testfiesta-for-testrail-users/readme/migrating-from-testrail.md)
+  * [Integrations For TestRail Users](testfiesta-for-testrail-users/readme/integrations-for-testrail-users.md)
+  * [TestRail API Integration Guide](testfiesta-for-testrail-users/readme/testrail-api-integration-guide.md)
+  * [TestRail API Integration Deep Dive](testfiesta-for-testrail-users/readme/testrail-api-integration-deep-dive.md)
+  * [Terminology and Methodology Differences](testfiesta-for-testrail-users/readme/terminology-and-methodology-differences.md)
+  * [API & Automation](testfiesta-for-testrail-users/readme/api-and-automation.md)
 
 ## Projects Tab
 

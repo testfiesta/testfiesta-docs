@@ -2,9 +2,23 @@
 description: >-
   This guide is crafted for TestRail users switching to TestFiesta, offering a
   clear path to adopt its modern, cost-effective test management platform.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
-# 🥳 TestFiesta For TestRail Users
+# TestFiesta For TestRail Users
 
 ## Overview
 
