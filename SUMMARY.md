@@ -14,14 +14,13 @@
 
 ## TestFiesta For TestRail Users
 
-* [TestFiesta For TestRail Users](testfiesta-for-testrail-users/readme/README.md)
-  * [Getting Started](testfiesta-for-testrail-users/readme/getting-started.md)
-  * [Migrating From TestRail](testfiesta-for-testrail-users/readme/migrating-from-testrail.md)
-  * [Integrations For TestRail Users](testfiesta-for-testrail-users/readme/integrations-for-testrail-users.md)
-  * [TestRail API Integration Guide](testfiesta-for-testrail-users/readme/testrail-api-integration-guide.md)
-  * [TestRail API Integration Deep Dive](testfiesta-for-testrail-users/readme/testrail-api-integration-deep-dive.md)
-  * [Terminology and Methodology Differences](testfiesta-for-testrail-users/readme/terminology-and-methodology-differences.md)
-  * [API & Automation](testfiesta-for-testrail-users/readme/api-and-automation.md)
+* [Getting Started](testfiesta-for-testrail-users/getting-started.md)
+* [Migrating From TestRail](testfiesta-for-testrail-users/migrating-from-testrail.md)
+* [Integrations For TestRail Users](testfiesta-for-testrail-users/integrations-for-testrail-users.md)
+* [TestRail API Integration Guide](testfiesta-for-testrail-users/testrail-api-integration-guide.md)
+* [TestRail API Integration Deep Dive](testfiesta-for-testrail-users/testrail-api-integration-deep-dive.md)
+* [Terminology and Methodology Differences](testfiesta-for-testrail-users/terminology-and-methodology-differences.md)
+* [API & Automation](testfiesta-for-testrail-users/api-and-automation.md)
 
 ## Projects Tab
 

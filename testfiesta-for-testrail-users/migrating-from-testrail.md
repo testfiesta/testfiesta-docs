@@ -1,7 +1,7 @@
 ---
 description: >-
-  TestFiesta offers three flexible migration options to transition from
-  TestRail, designed for teams of all sizes—from small startups to large
+  This page covers TestFiesta's three flexible migration options to transition
+  from TestRail, designed for teams of all sizes—from small startups to large
   enterprises.
 ---
 

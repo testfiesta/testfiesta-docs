@@ -1,6 +1,14 @@
+---
+description: >-
+  This page is designed to guide TestRail users through setting up TestFiesta,
+  migrating data, and configuring initial integrations, & more!
+---
+
 # Getting Started
 
-This page walks TestRail users through the initial steps to start using TestFiesta, from creating an account to setting up your team and exploring optional migration and integration options. Each step builds on TestRail’s familiar workflows, making onboarding straightforward.
+## Onboarding steps
+
+This section will walk TestRail users through the initial steps to start using TestFiesta, from creating an account to setting up your team and exploring optional migration and integration options. Each step builds on TestRail’s familiar workflows, making onboarding straightforward.
 
 <details>
 

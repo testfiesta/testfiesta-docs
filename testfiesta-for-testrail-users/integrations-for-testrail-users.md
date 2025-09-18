@@ -1,8 +1,8 @@
 ---
 description: >-
-  Integrations connect TestFiesta to external tools, enhancing defect tracking,
-  storage, and automation for TestRail users transitioning to a more flexible
-  platform.
+  This page explains how integrations connect TestFiesta to external tools,
+  enhancing defect tracking, storage, and automation for TestRail users
+  transitioning to a more flexible platform.
 ---
 
 # Integrations For TestRail Users

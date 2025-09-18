@@ -1,3 +1,9 @@
+---
+description: >-
+  This page takes a deep dive into the TestRail API integration explaining in
+  greater detail the ins & outs of the what, when, why & how about it.
+---
+
 # TestRail API Integration Deep Dive
 
 This page provides a detailed guide for TestRail users transitioning to TestFiesta, focusing on migration and integration with TestRail. It covers what data migrates, how synchronization works, strategic migration approaches, and best practices to ensure a smooth transition with minimal disruption.
