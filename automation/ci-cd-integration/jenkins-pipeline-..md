@@ -1,4 +1,4 @@
-# Jenkins (Pipeline)
+# Jenkins (Pipeline).
 
 <p align="center"><img src="../../.gitbook/assets/jenkins-svg.svg" alt=""></p>
 
@@ -79,7 +79,7 @@ Tacotruck plugin requires nodejs as dependency. Login to your jenkins dasboard a
 
 <figure><img src="../../.gitbook/assets/jenkins-configure-tools-page.png" alt=""><figcaption></figcaption></figure>
 
-3. Install a Nodejs version. Please make sure that you install node version ≥ 20. You need to name the Tool so that we can refer it later from the pipeline script.
+3. Install a Nodejs version. Please make sure that you install node **version** ≥ <mark style="color:red;">`20`</mark>. You need to name the Tool so that we can refer it later from the pipeline script.
 
 <figure><img src="../../.gitbook/assets/jenkins-configure-nodejs-section.png" alt=""><figcaption></figcaption></figure>
 
