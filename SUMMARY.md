@@ -281,6 +281,7 @@
     * [NUnit](automation/testing-tools/.net/nunit.md)
   * [Go](automation/testing-tools/go/README.md)
     * [Testing](automation/testing-tools/go/testing.md)
+    * [Testify](automation/testing-tools/go/testify.md)
   * [PHP](automation/testing-tools/php/README.md)
     * [PHPUnit](automation/testing-tools/php/phpunit.md)
     * [PestPHP](automation/testing-tools/php/pestphp.md)

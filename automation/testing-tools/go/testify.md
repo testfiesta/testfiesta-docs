@@ -1,21 +1,6 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Testify
+
+
 
 <figure><img src="../../../.gitbook/assets/Go-Logo_Fuchsia.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -126,9 +111,5 @@ jobs:
           credentials: ${{ secrets.TESTFIESTA_API_KEY }}
           results-path: ./test-results.xml
 ```
-{% endtab %}
-
-{% tab title="Testrail Example" %}
-
 {% endtab %}
 {% endtabs %}
