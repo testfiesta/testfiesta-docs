@@ -49,7 +49,7 @@ Whether you’re using TestRail Cloud or Server, these methods ensure your test 
 
 <summary>PartyInvites (Enterprise and TestRail Server Users)</summary>
 
-* **Overview:** PartyInvites is a specialized tool for large-scale migrations, particularly for TestRail Server users or enterprises with full database copies (e.g., Meta-sized teams). It directly imports an entire TestRail database into TestFiesta, ensuring no data loss. (Note: “Piñata” appears to be a misnomer for PartyInvites, likely a transcription error; it’s not referenced in TestFiesta’s public docs.)
+* **Overview:** PartyInvites is a specialized tool for large-scale migrations, particularly for TestRail Server users or enterprises with full database copies (e.g., enterprise-sized teams). It directly imports an entire TestRail database into TestFiesta, ensuring no data loss.&#x20;
 * **How It Works:**
   1. Contact TestFiesta support at [testfiesta.com/contact-us](https://testfiesta.com/contact-us) to initiate the process.
   2. Provide access to your TestRail Server database or a database copy (e.g., SQL dump or backup).
