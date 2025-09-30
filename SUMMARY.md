@@ -281,6 +281,7 @@
     * [NUnit](automation/testing-tools/.net/nunit.md)
   * [Go](automation/testing-tools/go/README.md)
     * [Testing](automation/testing-tools/go/testing.md)
+    * [Testify](automation/testing-tools/go/testify.md)
   * [PHP](automation/testing-tools/php/README.md)
     * [PHPUnit](automation/testing-tools/php/phpunit.md)
     * [PestPHP](automation/testing-tools/php/pestphp.md)
@@ -294,7 +295,8 @@
     * [ExUnit](automation/testing-tools/elixir/exunit.md)
 * [CI-CD Integration](automation/ci-cd-integration/README.md)
   * [CircleCI](automation/ci-cd-integration/circleci.md)
-  * [Jenkins](automation/ci-cd-integration/jenkins.md)
+  * [Jenkins(Pipeline)](automation/ci-cd-integration/jenkins-pipeline.md)
+  * [Jenkins(Freestyle)](automation/ci-cd-integration/jenkins-freestyle.md)
   * [GitLab CI](automation/ci-cd-integration/gitlab-ci.md)
   * [GitHub Actions](automation/ci-cd-integration/github-actions.md)
 
