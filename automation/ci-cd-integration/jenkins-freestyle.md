@@ -17,25 +17,45 @@ TODO — This will be replace after jenkins plugin is hosted.
 
 Tacotruck plugin requires `nodejs` as dependency. Login to your jenkins dasboard and go to the settings page. Plugins are available at [http://localhost:8080/manage/pluginManager/available](http://localhost:8080/manage/pluginManager/available) this path. You can search for "Nodejs" plugin. Select the plugin and install. You may need to restart your jenkins instance after installing the nodejs plugin.
 
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 ### Configure Nodejs as Global Tool
 
-1. Go to settings and click on tools section.
-2. Click on "Add Nodejs" button
-3. Install a Nodejs version. Please make sure that you install node **version** ≥ `20`. You need to name the Tool so that we can refer it later from the pipeline script.
+1.  Go to settings and click on tools section. \
+
+
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+2.  Click on "Add Nodejs" button \
+
+
+    <figure><img src="../../.gitbook/assets/jenkins-configure-tools-page.png" alt=""><figcaption></figcaption></figure>
+3.  Install a Nodejs version. Please make sure that you install node **version** ≥ `20`. You need to name the Tool so that we can refer it later from the pipeline script.\
+
+
+    <figure><img src="../../.gitbook/assets/jenkins-configure-nodejs-section.png" alt=""><figcaption></figcaption></figure>
 
 ### Create a Freestyle project
 
 Click on the "New Item" button from the home page of jenkins dashboard and create a new freestyle project.
 
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
 #### Configure your project <a href="#configure-your-project" id="configure-your-project"></a>
 
-First we need to configure `nodejs` environment for Tacotruck CLI. We can select the "Environment" tab and under "Envronment" section we should select the option to `Provide Node & npm bin/ folder to PATH`\
+First we need to configure `nodejs` environment for Tacotruck CLI. We can select the "Environment" tab and under "Envronment" section we should select the option to `Provide Node & npm bin/ folder to PATH`&#x20;
 
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Add Build and Test step
 
 You can configure build and test step based on your tech stack or requirements. Here is an example that runs a C# .NET test and outputs a `test-results.xml` file.
 
+<figure><img src="../../.gitbook/assets/Screenshot 2025-10-01 at 7.48.20 in the morning.png" alt=""><figcaption></figcaption></figure>
+
 ### Submit the test results using Tacotruck step
 
 We can add "Execute Tacotruck" build step from "Add build step" dropdown button and configure all the required fields.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-10-01 at 7.47.42 in the morning.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
