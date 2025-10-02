@@ -268,7 +268,11 @@
 
 ## Automation
 
-* [Tacotruck CLI](automation/tacotruck-cli.md)
+* [Tacotruck CLI](automation/tacotruck-cli/README.md)
+  * [Get start](automation/tacotruck-cli/get-start.md)
+* [commands](automation/commands/README.md)
+  * [Testfiesta](automation/commands/testfiesta.md)
+  * [TestRail](automation/commands/testrail.md)
 * [Testing Tools](automation/testing-tools/README.md)
   * [JavaScript](automation/testing-tools/javascript/README.md)
     * [Jest](automation/testing-tools/javascript/jest.md)
