@@ -1,8 +1,4 @@
-# Testfiesta
-
-## Complete TestFiesta Command Reference
-
-### 1. Test Run Management
+# Runs
 
 #### `testfiesta run:submit` - Submit Test Results
 

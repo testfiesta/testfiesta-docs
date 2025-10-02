@@ -21,6 +21,20 @@ layout:
 
 Bun ships with a fast, built-in, Jest-compatible test runner that runs directly on the Bun runtime and supports TypeScript, JSX, lifecycle hooks, snapshot testing, UI & DOM testing Vitest can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Bun`](https://bun.sh/docs) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check simple bun [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-bun-tf)
 
+**Configuration**
+
+To generate xml report file  resport  output type and  file name ptah  should be configured in  test command scripts section  of package.json
+
+```javascript
+//package.json
+
+{
+  "scripts": {
+    "test:report": "bun test --reporter=junit --reporter-outfile=./test-results.xml"
+  },
+}
+```
+
 **Install tacotruck cli**
 
 {% code overflow="wrap" fullWidth="false" %}
@@ -97,9 +111,5 @@ jobs:
          credentials: ${{ secrets.TESTFIESTA_API_KEY }}
          results-path: ./reports/test-results.xml
 ```
-{% endtab %}
-
-{% tab title="Testrail Example" %}
-
 {% endtab %}
 {% endtabs %}

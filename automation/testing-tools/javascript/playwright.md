@@ -21,6 +21,21 @@ layout:
 
 Playwright Test is an end-to-end test framework for modern web apps. It bundles test runner, assertions, isolation, parallelization and rich tooling. Playwright can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Playweight`](https://mochajs.org/#installation) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check simple playwright [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-playwright-tf)
 
+**Configuration**
+
+To generate xml report file  resport  output type and file name path should be configured in config file
+
+```javascript
+//playwright.config.js
+
+import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
+  reporter: [['html'], ['junit', { outputFile: 'test-results.xml' }]],
+});
+```
+
 **Install tacotruck cli**
 
 {% code overflow="wrap" fullWidth="false" %}
@@ -44,18 +59,6 @@ tacotruck testfiesta \
   --handle orgHandle \
   --key projectKey \
   --name runName \
-  --data results-path/*.xml
-```
-{% endtab %}
-
-{% tab title="Testrail Example" %}
-```
-tacotruck testrail \
-  run:submit \
-  --url https://<your-org-name>.testrail.io \
-  --email username@example.com \
-  --password password \
-  --name "Test run name" \
   --data results-path/*.xml
 ```
 {% endtab %}
