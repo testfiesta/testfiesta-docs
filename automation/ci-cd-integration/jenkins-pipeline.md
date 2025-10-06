@@ -1,15 +1,12 @@
-# Jenkins(Pipeline)
+# Jenkins (Pipeline)
 
-\
-
-
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FZIvgdgotCRWnGLjYiMJQ%2Fuploads%2Fgit-blob-0529fff1e3c4fdb107f2b9102aa93f06ffedc6bf%2Fjenkins-svg.svg?alt=media" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/jenkins-svg (1).svg" alt=""><figcaption></figcaption></figure>
 
 Jenkins is the leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project.
 
 You can use our [jenkins](https://plugins.jenkins.io/tacotruck-plugin) plugin in your pipeline script.
 
-### Jenkins Installation with Docker
+### &#x20;Jenkins Installation with Docker
 
 1. Create a bridge network in Docker
 
@@ -71,20 +68,21 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
 
 Tacotruck plugin requires nodejs as dependency. Login to your jenkins dasboard and go to the settings page. Plugins are available at [http://localhost:8080/manage/pluginManager/available](http://localhost:8080/manage/pluginManager/available) this path. You can search for Nodejs plugin. Select the plugin and install.
 
-<figure><img src="../../.gitbook/assets/jenkins-available-plugins-page.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/jenkins-available-plugin.webp" alt=""><figcaption></figcaption></figure>
 
 ### Configure Nodejs as Global Tool
 
-1.  Go to settings and click on tools section.
+1. Go to settings and click on tools section.
 
-    <figure><img src="../../.gitbook/assets/jenkins-settings-page.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/jenkins-settings-page.png" alt=""><figcaption></figcaption></figure>
+
 2. Click on "Add Nodejs" button
 
-<figure><img src="../../.gitbook/assets/jenkins-configure-tools-page.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/configure-nodejs-tool.webp" alt=""><figcaption></figcaption></figure>
 
 3. Install a Nodejs version. Please make sure that you install node **version** ≥ <mark style="color:red;">`20`</mark>. You need to name the Tool so that we can refer it later from the pipeline script.
 
-<figure><img src="../../.gitbook/assets/jenkins-configure-nodejs-section.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/configure-nodejs-tools-section.webp" alt=""><figcaption></figcaption></figure>
 
 ### Install Tacotruck Jenkins Plugin
 
@@ -126,4 +124,4 @@ pipeline {
 }
 ```
 
-You can see the documentation for Tacotruck jenkins plugin [here](https://docs.testfiesta.com/). For `credentialsId` parameter you can see the documentation for using credentials in jenkins [here](https://www.jenkins.io/doc/book/using/using-credentials/).
+You can see the documentation for Tacotruck jenkins plugin [here](https://docs.testfiesta.com/). For `credentialsId`  parameter you can see the documentation for using credentials in jenkins [here](https://www.jenkins.io/doc/book/using/using-credentials/).

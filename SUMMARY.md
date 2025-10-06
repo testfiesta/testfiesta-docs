@@ -313,7 +313,8 @@
     * [ExUnit](automation/testing-tools/elixir/exunit.md)
 * [CI-CD Integration](automation/ci-cd-integration/README.md)
   * [CircleCI](automation/ci-cd-integration/circleci.md)
-  * [Jenkins](automation/ci-cd-integration/jenkins.md)
+  * [Jenkins (Pipeline)](automation/ci-cd-integration/jenkins-pipeline.md)
+  * [Jenkins (Freestyle)](automation/ci-cd-integration/jenkins-freestyle.md)
   * [GitLab CI](automation/ci-cd-integration/gitlab-ci.md)
   * [GitHub Actions](automation/ci-cd-integration/github-actions.md)
 
