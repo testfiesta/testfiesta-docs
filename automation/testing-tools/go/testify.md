@@ -1,6 +1,6 @@
 # Testify
 
-<figure><img src="../../../.gitbook/assets/Go-Logo_Fuchsia.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Go-Logo_Fuchsia.png" alt="" width="375"><figcaption></figcaption></figure>
 
 Testify package in Go is a popular and widely used library that extends the standard Go testing package, providing a more expressive and convenient API for writing unit tests. It offers a comprehensive set of tools to simplify testing in Go applications. [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum) package  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple testify  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-testify-tf) &#x20;
 
@@ -44,7 +44,7 @@ tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
   --handle orgHandle \
-  --key projectKey \
+  --project projectKey \
   --name runName \
   --data results-path/*.xml
 ```
@@ -105,9 +105,7 @@ jobs:
           handle: handle
           project: project
           run-name: Go Testify testing CI run
-          base-url: https://api.testfiesta.com
-          credentials: ${{ secrets.TESTFIESTA_API_KEY }}
-          results-path: ./test-results.xml
+
 ```
 {% endtab %}
 {% endtabs %}
