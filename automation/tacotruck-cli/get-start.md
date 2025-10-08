@@ -1,4 +1,4 @@
-# Get start
+# Getting started
 
 ## Getting Started with Tacotruck
 
@@ -83,6 +83,3 @@ Optional parameters:
 Tacotruck supports various test result formats:
 
 * JUnit XML
-
-\
-\
