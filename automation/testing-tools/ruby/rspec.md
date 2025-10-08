@@ -2,35 +2,30 @@
 
 <figure><img src="../../../.gitbook/assets/rspec-plain-wordmark-8x-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
-RSpec is a behavior-driven development (BDD) testing framework for the Ruby programming language, widely used for testing Ruby code and, notably, Ruby on Rails applications.RSpec  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple RSpec   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-rspec-tf)   \
+RSpec is a behavior-driven development (BDD) testing framework for the Ruby programming language, widely used for testing Ruby code and, notably, Ruby on Rails applications. RSpec  can  generate standard format JUnit-style XML files  which can be  submitted  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple RSpec [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-rspec-tf).\
 
 
 **Generate xml report file**&#x20;
 
 To genereate xml file report,  report file path should be included in command&#x20;
 
-```javascript
-// test report command
+```sh
 bundle exec rspec --format documentation --format RspecJunitFormatter --out spec/reports/test-results.xml
 ```
 
-**Install tacotruck cli** &#x20;
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -41,8 +36,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -57,8 +52,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: ruby rspec
 
 on:

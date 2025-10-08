@@ -2,34 +2,29 @@
 
 <figure><img src="../../../.gitbook/assets/Pytest_logo.svg" alt="" width="375"><figcaption></figcaption></figure>
 
-The `pytest` framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries. pytest unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple pytest   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-pytest-tf) &#x20;
+The `pytest` framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries. pytest unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple pytest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-pytest-tf).
 
 **Generate xml report file**&#x20;
 
-To genereate xml file, report  file path should be included in command&#x20;
+To generate xml file, report  file path should be included in command&#x20;
 
-```javascript
-// pytest test command
+```sh
 pytest --junitxml=test-results.xml
 ```
 
 **Install tacotruck cli** &#x20;
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -40,8 +35,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -56,8 +51,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: Python Tests
 on:
   pull_request:

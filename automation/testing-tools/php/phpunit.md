@@ -2,34 +2,29 @@
 
 <figure><img src="../../../.gitbook/assets/PHPUnit_Logo.svg" alt=""><figcaption></figcaption></figure>
 
-PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks. PHP unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple PHPunit   [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-phpunit-tf) &#x20;
+PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks. PHP unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple PHPUnit [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-phpunit-tf).
 
 **Generate xml report file**&#x20;
 
-To genereate xml file  report  of the test logger and log file path should be included in command&#x20;
+To generate xml file  report  of the test logger and log file path should be included in command&#x20;
 
-```javascript
-// test report command
+```sh
 ./vendor/bin/phpunit --log-junit=test-reports/test-results.xml
 ```
 
-**Install tacotruck cli** &#x20;
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -40,8 +35,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -56,8 +51,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: phpunit
 
 on:

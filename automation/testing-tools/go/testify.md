@@ -2,44 +2,40 @@
 
 <figure><img src="../../../.gitbook/assets/Go-Logo_Fuchsia.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Testify package in Go is a popular and widely used library that extends the standard Go testing package, providing a more expressive and convenient API for writing unit tests. It offers a comprehensive set of tools to simplify testing in Go applications. [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum) package  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple testify  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-testify-tf) &#x20;
+Testify package in Go is a popular and widely used library that extends the standard Go testing package, providing a more expressive and convenient API for writing unit tests. It offers a comprehensive set of tools to simplify testing in Go applications. [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum) package  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple testify [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-testify-tf).
 
 **Steps to generate test report xml file** \
 1\. Install gotestsum (only needed once)
 
-```
+```sh
 go install gotest.tools/gotestsum@latest
 ```
 
 2. Make sure \~/go/bin is in your PATH
 
-```
+```sh
 export PATH=$PATH:~/go/bin
 ```
 
 3. Generate JUnit XML report
 
-```
+```sh
 gotestsum --junitfile test-results.xml -- ./test/...
 ```
 
-**Install tacotruck cli** &#x20;
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
 ```javascript
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -50,8 +46,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -66,8 +62,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: Go Tests with Testify
 on:
   pull_request:

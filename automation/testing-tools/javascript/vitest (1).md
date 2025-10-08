@@ -25,9 +25,8 @@ Vitest is a fast and lightweight testing framework built on Vite. It offers API 
 
 To generate xml report file  report  output type,  file name path should be configured in config file
 
-```javascript
+```typescript
 //vitest.config.ts
-
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -45,20 +44,16 @@ export default defineConfig({
 **Install tacotruck cli**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -69,8 +64,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -85,8 +80,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: vitest
 on:
   pull_request:

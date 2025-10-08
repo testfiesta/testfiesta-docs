@@ -19,25 +19,21 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/Deno_Logo_2024.svg.png" alt="" width="256"><figcaption></figcaption></figure>
 
-Deno provides a built-in test runner for writing and running tests in both JavaScript and TypeScript. Deno can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Deno`](https://docs.deno.com/runtime/) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-deno-tf)
+Deno provides a built-in test runner for writing and running tests in both JavaScript and TypeScript. Deno can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Deno`](https://docs.deno.com/runtime/) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check out simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-deno-tf).
 
-**Install tacotruck cli**
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -48,8 +44,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -64,8 +60,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: deno
 on:
   pull_request:
@@ -97,7 +93,7 @@ jobs:
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
+{% tab title="Testrail" %}
 
 {% endtab %}
 {% endtabs %}

@@ -19,15 +19,13 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/bun (1).svg" alt=""><figcaption></figcaption></figure>
 
-Bun ships with a fast, built-in, Jest-compatible test runner that runs directly on the Bun runtime and supports TypeScript, JSX, lifecycle hooks, snapshot testing, UI & DOM testing Vitest can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Bun`](https://bun.sh/docs) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check simple bun [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-bun-tf)
+Bun ships with a fast, built-in, Jest-compatible test runner that runs directly on the Bun runtime and supports TypeScript, JSX, lifecycle hooks, snapshot testing, UI & DOM testing Vitest can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Bun`](https://bun.sh/docs) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check out simple bun [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-bun-tf).
 
 **Configuration**
 
-To generate xml report file  resport  output type and  file name ptah  should be configured in  test command scripts section  of package.json
+To generate xml report, output path and file name should be configured in  test command scripts section of package.json
 
-```javascript
-//package.json
-
+```json
 {
   "scripts": {
     "test:report": "bun test --reporter=junit --reporter-outfile=./test-results.xml"
@@ -35,23 +33,19 @@ To generate xml report file  resport  output type and  file name ptah  should be
 }
 ```
 
-**Install tacotruck cli**
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -62,8 +56,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -78,8 +72,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: bun
 on:
   pull_request:

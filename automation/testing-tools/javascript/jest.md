@@ -19,11 +19,11 @@ layout:
 
 <div align="center" data-full-width="false"><figure><img src="../../../.gitbook/assets/jest-js-icon (1).svg" alt="" width="299"><figcaption></figcaption></figure></div>
 
-Jest is a delightful JavaScript Testing Framework with a focus on simplicity.It works with projects using: [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Node](https://nodejs.org/), [React](https://reactjs.org/), [Angular](https://angular.io/), [Vue](https://vuejs.org/) and more! Jest can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`jest-junit`](https://www.npmjs.com/package/jest-junit) package and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-jest-tf)
+Jest is a delightful JavaScript Testing Framework with a focus on simplicity.It works with projects using: [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [Node](https://nodejs.org/), [React](https://reactjs.org/), [Angular](https://angular.io/), [Vue](https://vuejs.org/) and more! Jest can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`jest-junit`](https://www.npmjs.com/package/jest-junit) package and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check out simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-jest-tf).
 
 **Configuration**
 
-To generate xml report file  resport  output type,  folder and file name should be configured in config file
+To generate xml report file output,  folder and file name should be configured in config file
 
 ```javascript
 //jest.config.js
@@ -39,23 +39,19 @@ const config = {
 module.exports = config;
 ```
 
-**Install tacotruck cli**
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -66,8 +62,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -82,8 +78,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: jest
 on:
   pull_request:

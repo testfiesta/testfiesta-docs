@@ -7,39 +7,35 @@ In Golang, package **testing** is responsible for different types of testing may
 **Steps to generate test report xml file** \
 1\. Install gotestsum (only needed once)
 
-```
+```sh
 go install gotest.tools/gotestsum@latest
 ```
 
-2. Make sure \~/go/bin is in your PATH
+2. Make sure `~/go/bin` is in your PATH
 
-```
+```sh
 export PATH=$PATH:~/go/bin
 ```
 
 3. Generate JUnit XML report
 
-```
+```sh
 gotestsum --junitfile test-results.xml -- ./test/...
 ```
 
-**Install tacotruck cli** &#x20;
+**Install Tacotruck CLI**
 
 {% code overflow="wrap" fullWidth="false" %}
-```javascript
+```sh
 $ npm install -g @testfiesta/tacotruck
-$ tacotruck -h
-// output
-Usage: tacotruck [options] [command]
-[...]
 ```
 {% endcode %}
 
 **Submit test results**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```
+{% tab title="Testfiesta" %}
+```sh
 tacotruck testfiesta \
   run:submit \
   --token testfiesta_... \
@@ -50,8 +46,8 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 
-{% tab title="Testrail Example" %}
-```
+{% tab title="Testrail" %}
+```sh
 tacotruck testrail \
   run:submit \
   --url https://<your-org-name>.testrail.io \
@@ -66,8 +62,8 @@ tacotruck testrail \
 **Github action**
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
-```json
+{% tab title="Testfiesta" %}
+```yaml
 name: Go Tests
 on:
   pull_request:
