@@ -288,6 +288,7 @@
     * [Mocha](automation/testing-tools/javascript/mocha.md)
     * [Playwright](automation/testing-tools/javascript/playwright.md)
   * [.NET](automation/testing-tools/.net/README.md)
+    * [MSTest](automation/testing-tools/.net/mstest.md)
     * [NUnit](automation/testing-tools/.net/nunit.md)
     * [XUnit](automation/testing-tools/.net/xunit.md)
   * [Go](automation/testing-tools/go/README.md)
