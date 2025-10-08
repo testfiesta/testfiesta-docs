@@ -281,6 +281,7 @@
       * [Projects](automation/tacotruck-cli/commands/testrail/projects.md)
 * [Testing Tools](automation/testing-tools/README.md)
   * [JavaScript](automation/testing-tools/javascript/README.md)
+    * [Cypress](automation/testing-tools/javascript/cypress.md)
     * [Jest](automation/testing-tools/javascript/jest.md)
     * [Vitest](<automation/testing-tools/javascript/vitest (1).md>)
     * [Bun](automation/testing-tools/javascript/bun.md)
