@@ -106,52 +106,38 @@ jobs:
     steps:
       - checkout
       
-      # Restore dependencies
       - run:
           name: Restore NuGet packages
           command: dotnet restore
       
-      # Build the application
       - run:
           name: Build application
           command: dotnet build --configuration Release --no-restore
       
-      # Run tests with NUnit and generate JUnit XML
       - run:
-          name: Run NUnit tests
+          name: Run tests
           command: |
             dotnet test --configuration Release --no-build \
-              --logger "junit;LogFilePath=test-results/nunit-results.xml" \
-              --collect:"XPlat Code Coverage" \
-              --results-directory ./test-results
+              --logger "junit;LogFilePath=/tmp/test-results.xml"
       
-      # Store test results for CircleCI and next job
-      - store_test_results:
-          path: ./test-results
-      - store_artifacts:
-          path: ./test-results
-      
-      # Persist test results for reporting job
       - persist_to_workspace:
-          root: .
+          root: /tmp
           paths:
-            - test-results/nunit-results.xml
+            - test-results.xml
 
   report-results:
     executor: tacotruck/default
     steps:
       - attach_workspace:
-          at: .
+          at: /tmp
       
-      # Install TacoTruck
       - tacotruck/install:
           version: "latest"
           check_version: true
       
-      # Submit results to TestFiesta
       - tacotruck/submit:
           provider: "testfiesta"
-          results_path: "./test-results/nunit-results.xml"
+          results_path: "/tmp/test-results.xml"
           project_key: "dotnet-api"
           api_key: "TESTFIESTA_API_KEY"
           handle: "dev-team"
@@ -171,11 +157,13 @@ workflows:
           filters:
             branches:
               only: /.*/
+
 ```
 
 ### Support and Resources
 
 * **Examples**: [TacoTruck Examples Repository](https://github.com/testfiesta/tacotruck-examples)
+* **NUnit** **Examples**: [NUnit Example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-circle-ci-nunit-tf)
 * **Issues**: [GitHub Issues](https://github.com/testfiesta/tacotruck-orb/issues)
 * **CLI Reference**: [TacoTruck CLI Reference](https://github.com/testfiesta/tacotruck)
 * **Orb Reference**: [TacoTruck Orb Reference](https://circleci.com/developer/orbs/orb/testfiesta/tacotruck)
