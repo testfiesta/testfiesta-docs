@@ -276,6 +276,8 @@
       * [Projects](automation/tacotruck-cli/commands/testiest/projects.md)
       * [Custom Fields](automation/tacotruck-cli/commands/testiest/custom-fields.md)
       * [Tags](automation/tacotruck-cli/commands/testiest/tags.md)
+      * [Milestones](automation/tacotruck-cli/commands/testiest/milestones.md)
+      * [Templates](automation/tacotruck-cli/commands/testiest/templates.md)
     * [Testrail](automation/tacotruck-cli/commands/testrail/README.md)
       * [Runs](automation/tacotruck-cli/commands/testrail/runs.md)
       * [Projects](automation/tacotruck-cli/commands/testrail/projects.md)
