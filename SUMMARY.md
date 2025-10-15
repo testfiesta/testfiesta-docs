@@ -307,6 +307,7 @@
     * [Pytest](automation/testing-tools/python/pytest.md)
   * [Ruby](automation/testing-tools/ruby/README.md)
     * [RSpec](automation/testing-tools/ruby/rspec.md)
+    * [MiniTest](automation/testing-tools/ruby/minitest.md)
   * [Rust](automation/testing-tools/rust/README.md)
     * [Cargo Test](automation/testing-tools/rust/cargo-test.md)
   * [Elixir](automation/testing-tools/elixir/README.md)

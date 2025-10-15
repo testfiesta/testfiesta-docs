@@ -90,3 +90,11 @@ jobs:
 * [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
 * [**CLI Reference**](../../tacotruck-cli/)
 * [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [RSpec Docs](https://rspec.info/documentation)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)
