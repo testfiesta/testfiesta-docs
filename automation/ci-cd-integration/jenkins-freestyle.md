@@ -8,7 +8,9 @@ You can use our [jenkins](https://plugins.jenkins.io/tacotruck-plugin) plugin in
 
 ### Install Tacotruck plugin
 
-TODO — This will be replace after jenkins plugin is hosted.
+Go to the "Available Plugins" section on the settings page and search for "Tacotruck" to install.
+
+<figure><img src="../../.gitbook/assets/tacotruck-jenkins-plugin.png" alt=""><figcaption></figcaption></figure>
 
 ### Install Node.js Plugin
 
@@ -55,3 +57,12 @@ We can add "Execute Tacotruck" build step from "Add build step" dropdown button 
 <figure><img src="../../.gitbook/assets/jenkins-tacotruck-plugin-execute-option.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/jenkins-freestyle-configure-tacotruck-step.png" alt=""><figcaption></figcaption></figure>
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Jenkins Plugin](https://plugins.jenkins.io/tacotruck)
+* [Jenkins Plugin Source](https://github.com/jenkinsci/tacotruck-plugin)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

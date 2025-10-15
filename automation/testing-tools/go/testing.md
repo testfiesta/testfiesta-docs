@@ -2,9 +2,13 @@
 
 <figure><img src="../../../.gitbook/assets/Go-Logo_Blue.png" alt="" width="375"><figcaption></figcaption></figure>
 
-In Golang, package **testing** is responsible for different types of testing maybe it is performance testing, parallel testing, functional testing, or any possible combination of these all. [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum) package  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testing`](https://pkg.go.dev/testing) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check simple testing  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-tf) &#x20;
+In Golang, package **testing** is responsible for different types of testing maybe it is performance testing, parallel testing, functional testing, or any possible combination of these all. [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum) package  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testing`](https://pkg.go.dev/testing) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check  out simple testing  [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-tf).
 
-**Steps to generate test report xml file** \
+### Configuration
+
+To generate the XML test result, see the following steps:
+
+\
 1\. Install gotestsum (only needed once)
 
 ```sh
@@ -23,7 +27,7 @@ export PATH=$PATH:~/go/bin
 gotestsum --junitfile test-results.xml -- ./test/...
 ```
 
-**Install Tacotruck CLI**
+### Install Tacotruck CLI
 
 {% code overflow="wrap" fullWidth="false" %}
 ```sh
@@ -31,7 +35,7 @@ $ npm install -g @testfiesta/tacotruck
 ```
 {% endcode %}
 
-**Submit test results**
+### Submit test results
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -45,21 +49,9 @@ tacotruck testfiesta \
   --data results-path/*.xml
 ```
 {% endtab %}
-
-{% tab title="Testrail" %}
-```sh
-tacotruck testrail \
-  run:submit \
-  --url https://<your-org-name>.testrail.io \
-  --email username@example.com \
-  --password password \
-  --name "Test run name" \
-  --data results-path/*.xml
-```
-{% endtab %}
 {% endtabs %}
 
-**Github action**
+### Github Action
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -105,3 +97,11 @@ jobs:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Testing Docs](https://pkg.go.dev/testing)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

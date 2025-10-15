@@ -2,9 +2,9 @@
 
 <figure><img src="../../../.gitbook/assets/PHPUnit_Logo.svg" alt=""><figcaption></figcaption></figure>
 
-PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks. PHP unit  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple PHPUnit [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-phpunit-tf).
+PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks. PHP unit  can  generate standard format JUnit-style XML files  which can be submited  to Testfiesta or Testrail using Tacotruck CLI. Check out simple PHPUnit [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-phpunit-tf).
 
-**Generate xml report file**&#x20;
+### Configuration
 
 To generate xml file  report  of the test logger and log file path should be included in command&#x20;
 
@@ -12,7 +12,7 @@ To generate xml file  report  of the test logger and log file path should be inc
 ./vendor/bin/phpunit --log-junit=test-reports/test-results.xml
 ```
 
-**Install Tacotruck CLI**
+### Install Tacotruck CLI
 
 {% code overflow="wrap" fullWidth="false" %}
 ```sh
@@ -20,7 +20,7 @@ $ npm install -g @testfiesta/tacotruck
 ```
 {% endcode %}
 
-**Submit test results**
+### Submit test results
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -34,21 +34,9 @@ tacotruck testfiesta \
   --data results-path/*.xml
 ```
 {% endtab %}
-
-{% tab title="Testrail" %}
-```sh
-tacotruck testrail \
-  run:submit \
-  --url https://<your-org-name>.testrail.io \
-  --email username@example.com \
-  --password password \
-  --name "Test run name" \
-  --data results-path/*.xml
-```
-{% endtab %}
 {% endtabs %}
 
-**Github action**
+### Github Action
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -96,3 +84,11 @@ jobs:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [PHPUnit Docs](https://phpunit.de/documentation.html)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

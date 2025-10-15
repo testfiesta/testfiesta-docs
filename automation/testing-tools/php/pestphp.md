@@ -2,17 +2,17 @@
 
 <figure><img src="../../../.gitbook/assets/pestphp logo.jpeg" alt=""><figcaption></figcaption></figure>
 
-Pest is a testing framework with a focus on simplicity, meticulously designed to bring back the joy of testing in PHP. Pest  can  generate standard format JUnit-style XML files  which can be  submitted  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Pest`](https://pestphp.com/docs/installation) and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple pest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-pestphp-tf).
+Pest is a testing framework with a focus on simplicity, meticulously designed to bring back the joy of testing in PHP. Pest  can  generate standard format JUnit-style XML files  which can be  submitted  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Pest`](https://pestphp.com/docs/installation) and install Tacotruck  CLI or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple pest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-pestphp-tf).
 
-**Generate xml report file**&#x20;
+### Configuration
 
-To genereate xml file  report  of the test logger and log file path should be included in command&#x20;
+To generate xml file  report  of the test logger and log file path should be included in command&#x20;
 
 ```sh
 ./vendor/bin/phpunit --log-junit=test-reports/test-results.xml
 ```
 
-**Install Tacotruck CLI** &#x20;
+### Install Tacotruck CLI
 
 {% code overflow="wrap" fullWidth="false" %}
 ```sh
@@ -20,7 +20,7 @@ $ npm install -g @testfiesta/tacotruck
 ```
 {% endcode %}
 
-**Submit test results**
+### Submit test results
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -34,21 +34,9 @@ tacotruck testfiesta \
   --data results-path/*.xml
 ```
 {% endtab %}
-
-{% tab title="Testrail" %}
-```sh
-tacotruck testrail \
-  run:submit \
-  --url https://<your-org-name>.testrail.io \
-  --email username@example.com \
-  --password password \
-  --name "Test run name" \
-  --data results-path/*.xml
-```
-{% endtab %}
 {% endtabs %}
 
-**Github action**
+### Github Action
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -96,3 +84,11 @@ jobs:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [PestPHP Docs](https://pestphp.com/docs/pest-v4-is-here-now-with-browser-testing)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

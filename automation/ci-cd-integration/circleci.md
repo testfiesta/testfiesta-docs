@@ -162,8 +162,8 @@ workflows:
 
 ### Support and Resources
 
-* **Examples**: [TacoTruck Examples Repository](https://github.com/testfiesta/tacotruck-examples)
-* **NUnit** **Examples**: [NUnit Example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-circle-ci-nunit-tf)
-* **Issues**: [GitHub Issues](https://github.com/testfiesta/tacotruck-orb/issues)
-* **CLI Reference**: [TacoTruck CLI Reference](https://github.com/testfiesta/tacotruck)
-* **Orb Reference**: [TacoTruck Orb Reference](https://circleci.com/developer/orbs/orb/testfiesta/tacotruck)
+* &#x20;[TacoTruck Examples Repository](https://github.com/testfiesta/tacotruck-examples)
+* &#x20;[NUnit Example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-circle-ci-nunit-tf)
+* [GitHub Issues](https://github.com/testfiesta/tacotruck-orb/issues)
+* [TacoTruck CLI Reference](https://github.com/testfiesta/tacotruck)
+* &#x20;[TacoTruck Orb Reference](https://circleci.com/developer/orbs/orb/testfiesta/tacotruck)

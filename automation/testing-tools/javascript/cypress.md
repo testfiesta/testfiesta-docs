@@ -86,3 +86,11 @@ jobs:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Cypress Docs](https://docs.cypress.io/app/get-started/why-cypress)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

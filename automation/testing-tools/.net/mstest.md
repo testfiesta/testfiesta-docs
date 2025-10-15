@@ -35,3 +35,11 @@ tacotruck testfiesta \
   --name runName \
   --data results-path/*.xml
 ```
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [MSTest Docs](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-mstest-intro)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

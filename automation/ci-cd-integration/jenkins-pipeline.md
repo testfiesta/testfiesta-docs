@@ -86,7 +86,9 @@ Tacotruck plugin requires nodejs as dependency. Login to your jenkins dasboard a
 
 ### Install Tacotruck Jenkins Plugin
 
-TODO — This will be replace after jenkins plugin is hosted.
+Go to the "Available Plugins" section on the settings page and search for "Tacotruck" to install.
+
+<figure><img src="../../.gitbook/assets/tacotruck-jenkins-plugin.png" alt=""><figcaption></figcaption></figure>
 
 ### Tacotruck Pipeline Script
 
@@ -125,3 +127,12 @@ pipeline {
 ```
 
 You can see the documentation for Tacotruck jenkins plugin [here](https://docs.testfiesta.com/). For `credentialsId`  parameter you can see the documentation for using credentials in jenkins [here](https://www.jenkins.io/doc/book/using/using-credentials/).
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Jenkins Plugin](https://plugins.jenkins.io/tacotruck)
+* [Jenkins Plugin Source](https://github.com/jenkinsci/tacotruck-plugin)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

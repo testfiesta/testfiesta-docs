@@ -19,9 +19,9 @@ layout:
 
 <figure><img src="../../../.gitbook/assets/Deno_Logo_2024.svg.png" alt="" width="256"><figcaption></figcaption></figure>
 
-Deno provides a built-in test runner for writing and running tests in both JavaScript and TypeScript. Deno can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Deno`](https://docs.deno.com/runtime/) and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check out simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-deno-tf).
+Deno provides a built-in test runner for writing and running tests in both JavaScript and TypeScript. Deno can generate standard format JUnit-style XML files which can be submited to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Deno`](https://docs.deno.com/runtime/) and install Tacotruck CLI or use [Github action](https://github.com/testfiesta/tacotruck-action). Check out simple jest [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-deno-tf).
 
-**Install Tacotruck CLI**
+### Install Tacotruck CLI
 
 {% code overflow="wrap" fullWidth="false" %}
 ```sh
@@ -29,7 +29,7 @@ $ npm install -g @testfiesta/tacotruck
 ```
 {% endcode %}
 
-**Submit test results**
+### Submit Test results
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -43,21 +43,9 @@ tacotruck testfiesta \
   --data results-path/*.xml
 ```
 {% endtab %}
-
-{% tab title="Testrail" %}
-```sh
-tacotruck testrail \
-  run:submit \
-  --url https://<your-org-name>.testrail.io \
-  --email username@example.com \
-  --password password \
-  --name "Test run name" \
-  --data results-path/*.xml
-```
-{% endtab %}
 {% endtabs %}
 
-**Github action**
+### Github Action
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -92,8 +80,12 @@ jobs:
          results-path: ./test-results.xml
 ```
 {% endtab %}
-
-{% tab title="Testrail" %}
-
-{% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Deno Docs](https://docs.deno.com/runtime)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

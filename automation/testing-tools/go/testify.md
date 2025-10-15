@@ -4,7 +4,11 @@
 
 Testify package in Go is a popular and widely used library that extends the standard Go testing package, providing a more expressive and convenient API for writing unit tests. It offers a comprehensive set of tools to simplify testing in Go applications. [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum) package  can  generate standard format JUnit-style XML files  which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Go testify`](https://pkg.go.dev/github.com/stretchr/testify) ,  [Gotestsum](https://pkg.go.dev/github.com/IstrateM/gotestsum/pkg/gotestsum)  and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple testify [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-golang-testify-tf).
 
-**Steps to generate test report xml file** \
+### Configuration
+
+To generate the XML test result, see the following steps:
+
+\
 1\. Install gotestsum (only needed once)
 
 ```sh
@@ -23,7 +27,7 @@ export PATH=$PATH:~/go/bin
 gotestsum --junitfile test-results.xml -- ./test/...
 ```
 
-**Install Tacotruck CLI**
+### Install Tacotruck CLI
 
 {% code overflow="wrap" fullWidth="false" %}
 ```javascript
@@ -31,7 +35,7 @@ $ npm install -g @testfiesta/tacotruck
 ```
 {% endcode %}
 
-**Submit test results**
+### Submit test results
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -45,21 +49,9 @@ tacotruck testfiesta \
   --data results-path/*.xml
 ```
 {% endtab %}
-
-{% tab title="Testrail" %}
-```sh
-tacotruck testrail \
-  run:submit \
-  --url https://<your-org-name>.testrail.io \
-  --email username@example.com \
-  --password password \
-  --name "Test run name" \
-  --data results-path/*.xml
-```
-{% endtab %}
 {% endtabs %}
 
-**Github action**
+### Github Action
 
 {% tabs %}
 {% tab title="Testfiesta" %}
@@ -105,3 +97,11 @@ jobs:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Testify Docs](https://github.com/stretchr/testify)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

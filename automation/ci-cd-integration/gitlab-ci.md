@@ -115,3 +115,11 @@ When using the component , configure these inputs:
 | `api_key`      | API key (TestFiesta only)                         | `"${API_KEY}"`      | Yes (TestFiesta) |
 | `username`     | Username (TestRail only)                          | `"${USERNAME}"`     | Yes (TestRail)   |
 | `password`     | Password (TestRail only)                          | `"${PASSWORD}"`     | Yes (TestRail)   |
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [TacoTruck Gitlab CI/CD Component](https://gitlab.com/explore/catalog/testfiesta/tacotruck-cicd)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

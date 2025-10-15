@@ -84,3 +84,11 @@ Testfiesta uses Bearer token authentication.
 | `config`        | ❌ | Provider-specific configuration (JSON format)                                  |
 | `config-file`   | ❌ | Path to configuration file                                                     |
 | `fail-on-error` | ❌ | Fail workflow if submission fails (default: `true`)                            |
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [Cypress Docs](https://docs.cypress.io/app/get-started/why-cypress)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

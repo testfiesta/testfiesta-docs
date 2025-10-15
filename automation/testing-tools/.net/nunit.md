@@ -4,15 +4,15 @@
 
 NUnit is a unit-testing framework for all .NET languages. NUnit can be used for a wide range of testing, from unit testing with TDD to full fledged system and integration testing. Nunit can generate standard format JUnit-style XML files which can be  submited  to Testfiesta or Testrail using taco truck cli. You just need to install the popular [`Nunit`](http://nunit.org/nunitv2/docs/2.6.2/quickStart.html)  and install tacotruck cli or use [Github action](https://github.com/testfiesta/tacotruck-action). Check out simple NUnit [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-dotnet-nunit-tf).
 
-**Generate xml report file**&#x20;
+### Configuration
 
-To generate xml file  report  of the test logger and log file path should be included in command&#x20;
+To generate xml file report  of the test logger and log file path should be included in command&#x20;
 
 ```sh
 dotnet test --logger:"junit;LogFilePath=../test-results.xml"
 ```
 
-**Install Tacotruck CLI**
+### Install Tacotruck CLI
 
 {% code overflow="wrap" fullWidth="false" %}
 ```sh
@@ -20,10 +20,10 @@ $ npm install -g @testfiesta/tacotruck
 ```
 {% endcode %}
 
-**Submit test results**
+### Submit test results
 
 {% tabs %}
-{% tab title="Testfiesta Example" %}
+{% tab title="Testfiesta" %}
 ```sh
 tacotruck testfiesta \
   run:submit \
@@ -35,3 +35,11 @@ tacotruck testfiesta \
 ```
 {% endtab %}
 {% endtabs %}
+
+### Support and Resources
+
+* [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
+* [NUnit Docs](https://docs.nunit.org/)
+* [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
+* [**CLI Reference**](../../tacotruck-cli/)
+* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)
