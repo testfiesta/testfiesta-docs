@@ -1,170 +1,124 @@
 # Milestones
 
-### 1. Create Milestone
+### `testfiesta milestone:create`
 
-**Command Syntax**
+Create a new milestone in TestFiesta
+
+#### Synopsis
 
 ```
-tacotruck testfiesta milestone:create [options]
+tacotruck testfiesta milestone:create -p <project> -n <name> -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -p, --project \<project>: Project key
-* -n, --name \<name>: Milestone name
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+This command creates a new milestone in the specified TestFiesta project. Milestones can be used to track progress across multiple test runs and organize testing efforts around specific release cycles or project phases.
 
-**Optional Options**
+#### Arguments and options
 
-* -d, --description \<description>: Milestone description
-* \--due-date \<date>: Due date in YYYY-MM-DD format
-* -v, --verbose: Enable detailed logging
+* `-p, --project <project>`: Project key
+* `-n, --name <name>`: Milestone name
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-d, --description <description>`: Milestone description
+* `--due-date <date>`: Due date in YYYY-MM-DD format
+* `-v, --verbose`: Enable verbose logging
 
-**Example**
+### `testfiesta milestone:list`
 
-```sh
-tacotruck testfiesta milestone:create \
-  -p PROJECT_KEY \
-  -n "Release 1.0" \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization \
-  -d "First major release" \
-  --due-date 2023-12-31
+List milestones in TestFiesta
+
+#### Synopsis
+
+```
+tacotruck testfiesta milestone:list -p <project> -t <token> -u <url> -o <organization> [options]
 ```
 
-### 2. List Milestones
+#### Description
 
-**Command Syntax**
+This command retrieves and displays a list of all milestones in the specified TestFiesta project. Results can be paginated using the limit and offset options.
 
-```sh
-tacotruck testfiesta milestone:list [options]
+#### Arguments and options
+
+* `-p, --project <project>`: Project key
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-l, --limit <limit>`: Number of items to retrieve (default: 10)
+* `--offset <offset>`: Offset for pagination (default: 0)
+* `-v, --verbose`: Enable verbose logging
+
+### `testfiesta milestone:get`
+
+Get a specific milestone from TestFiesta
+
+#### Synopsis
+
+```
+tacotruck testfiesta milestone:get -p <project> -i <id> -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -p, --project \<project>: Project key
-* -t, --token \<token>: TestFiesta API token
-* -l, --limit \<limit>: Number of items to retrieve (default: 10)
-* \--offset \<offset>: Offset for pagination (default: 0)
-* -v, --verbose: Enable detailed logging
+This command retrieves detailed information about a specific milestone in the TestFiesta project, including its name, description, due date, status, and associated test runs.
 
-**Optional Options**
+#### Arguments and options
 
-* -p, --project \<project>: Project key
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+* `-p, --project <project>`: Project key
+* `-i, --id <id>`: Milestone ID
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-v, --verbose`: Enable verbose logging
 
-**Example**
+### `testfiesta milestone:update`
 
-```sh
-tacotruck testfiesta milestone:list \
-  -p PROJECT_KEY \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization
+Update a milestone in TestFiesta
+
+#### Synopsis
+
+```
+tacotruck testfiesta milestone:update -p <project> -i <id> -t <token> -u <url> -o <organization> [options]
 ```
 
-### 3. Get Milestone
+#### Description
 
-**Command Syntax**
+This command updates an existing milestone in the specified TestFiesta project. You can modify the name, description, due date, and status of the milestone.
 
-```sh
-tacotruck testfiesta milestone:get [options]
+#### Arguments and options
+
+* `-p, --project <project>`: Project key
+* `-i, --id <id>`: Milestone ID
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-n, --name <name>`: New milestone name
+* `-d, --description <description>`: New milestone description
+* `--due-date <date>`: New due date in YYYY-MM-DD format
+* `--status <status>`: New status (active, completed)
+* `-v, --verbose`: Enable verbose logging
+
+### `testfiesta milestone:delete`
+
+Delete a milestone from TestFiesta
+
+#### Synopsis
+
+```
+tacotruck testfiesta milestone:delete -p <project> -i <id> -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -p, --project \<project>: Project key
-* -i, --id \<id>: Milestone ID
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+This command deletes a milestone from the specified TestFiesta project. By default, it will prompt for confirmation before deletion unless the --non-interactive flag is used.
 
-**Optional Options**
+#### Arguments and options
 
-* -v, --verbose: Enable detailed logging
-
-**Example**
-
-```sh
-tacotruck testfiesta milestone:get \
-  -p PROJECT_KEY \
-  -i MILESTONE_ID \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization
-```
-
-### 4. Update Milestone
-
-**Command Syntax**
-
-```shell
-tacotruck testfiesta milestone:update [options]
-```
-
-**Required Options**
-
-* -p, --project \<project>: Project key
-* -i, --id \<id>: Milestone ID
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
-
-**Optional Options**
-
-* -n, --name \<name>: New milestone name
-* -d, --description \<description>: New milestone description
-* \--due-date \<date>: New due date in YYYY-MM-DD format
-* \--status \<status>: New status (active, completed)
-* -v, --verbose: Enable detailed logging
-
-**Example**
-
-```sh
-tacotruck testfiesta milestone:update \
-  -p PROJECT_KEY \
-  -i MILESTONE_ID \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization \
-  -n "Release 1.1" \
-  -d "Updated release scope" \
-  --due-date 2024-01-15
-```
-
-### 5. Delete Milestone
-
-**Command Syntax**
-
-```sh
-tacotruck testfiesta milestone:delete [options]
-```
-
-**Required Options**
-
-* -p, --project \<project>: Project key
-* -i, --id \<id>: Milestone ID
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
-
-**Optional Options**
-
-* -v, --verbose: Enable detailed logging
-* \--non-interactive: Skip confirmation prompts
-
-**Example**
-
-```sh
-tacotruck testfiesta milestone:delete \
-  -p PROJECT_KEY \
-  -i MILESTONE_ID \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization
-```
+* `-p, --project <project>`: Project key
+* `-i, --id <id>`: Milestone ID
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-v, --verbose`: Enable verbose logging
+* `--non-interactive`: Skip confirmation prompts

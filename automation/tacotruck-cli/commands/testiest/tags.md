@@ -1,157 +1,118 @@
 # Tags
 
-### 1. Create Tag
+### `testfiesta tag:create`
 
-**Command Syntax**
+Create a new tag in TestFiesta
 
-```
-tacotruck testfiesta tag:create [options]
-```
-
-**Required Options**
-
-* -n, --name \<name>: Tag name
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
-
-**Optional Options**
-
-* -d, --description \<description>: Tag description
-* -c, --color \<color>: Tag color (hex code)
-* -v, --verbose: Enable detailed logging
-
-**Example**
-
-```javascript
-tacotruck testfiesta tag:create
--n "Regression"
--t your_api_token
--u https://api.testfiesta.com
--o your_organization
--d "Regression tests"
--c "#FF5733"
-```
-
-### 2. List Tag
-
-**Command Syntax**
+#### Synopsis
 
 ```
-tacotruck testfiesta tag:list [options]
+tacotruck testfiesta tag:create -n <name> -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+This command creates a new tag in TestFiesta. Tags can be used to categorize and filter test cases, test runs, and other entities in the system.
 
-**Optional Options**
+#### Arguments and options
 
-* -l, --limit \<limit>: Number of items to retrieve (default: 10)
-* \--offset \<offset>: Offset for pagination (default: 0)
-* -v, --verbose: Enable detailed logging
+* `-n, --name <name>`: Tag name
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-d, --description <description>`: Tag description
+* `-c, --color <color>`: Tag color (hex code, e.g., #FF5733)
+* `-v, --verbose`: Enable verbose logging
 
-**Example**
+### `testfiesta tag:list`
 
-```
-tacotruck testfiesta tag:list \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization
-```
+List tags in TestFiesta
 
-### 3. Get Tag
-
-**Command Syntax**
+#### Synopsis
 
 ```
-tacotruck testfiesta tag:get [options]
+tacotruck testfiesta tag:list -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -i, --id \<id>: Tag ID
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+This command retrieves and displays a list of all tags in the TestFiesta organization. Results can be paginated using the limit and offset options.
 
-**Optional Options**
+#### Arguments and options
 
-* -v, --verbose: Enable detailed logging
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-l, --limit <limit>`: Number of items to retrieve (default: 10)
+* `--offset <offset>`: Offset for pagination (default: 0)
+* `-v, --verbose`: Enable verbose logging
 
-**Example**
+### `testfiesta tag:get`
 
-```
-tacotruck testfiesta tag:get \
-  -i TAG_ID \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization
-```
+Get a specific tag from TestFiesta
 
-### 4. Update Tag
-
-**Command Syntax**
+#### Synopsis
 
 ```
-tacotruck testfiesta tag:update [options]
+tacotruck testfiesta tag:get -i <id> -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -i, --id \<id>: Tag ID
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+This command retrieves detailed information about a specific tag in TestFiesta, including its name, description, color, and usage statistics.
 
-**Optional Options**
+#### Arguments and options
 
-* -n, --name \<name>: New tag name
-* -d, --description \<description>: New tag description
-* -c, --color \<color>: New tag color (hex code)
-* -v, --verbose: Enable detailed logging
+* `-i, --id <id>`: Tag ID
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-v, --verbose`: Enable verbose logging
 
-**Example**
+### `testfiesta tag:update`
 
-```
-tacotruck testfiesta tag:update \
-  -i TAG_ID \
-  -n "Updated Tag" \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization \
-  -d "Updated description" \
-  -c "#33FF57"
-```
+Update a tag in TestFiesta
 
-### 5. Delete Tag
-
-**Command Syntax**
+#### Synopsis
 
 ```
-tacotruck testfiesta tag:delete [options]
+tacotruck testfiesta tag:update -i <id> -t <token> -u <url> -o <organization> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -i, --id \<id>: Tag ID
-* -t, --token \<token>: TestFiesta API token
-* -u, --url \<url>: TestFiesta API URL
-* -o, --organization \<organization>: Organization handle
+This command updates an existing tag in TestFiesta. You can modify the name, description, and color of the tag.
 
-**Optional Options**
+#### Arguments and options
 
-* -v, --verbose: Enable detailed logging
-* \--non-interactive: Skip confirmation prompts
+* `-i, --id <id>`: Tag ID
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-n, --name <name>`: New tag name
+* `-d, --description <description>`: New tag description
+* `-c, --color <color>`: New tag color (hex code, e.g., #FF5733)
+* `-v, --verbose`: Enable verbose logging
 
-**Example**
+### `testfiesta tag:delete`
+
+Delete a tag from TestFiesta
+
+#### Synopsis
 
 ```
-tacotruck testfiesta tag:delete \
-  -i TAG_ID \
-  -t your_api_token \
-  -u https://api.testfiesta.com \
-  -o your_organization
+tacotruck testfiesta tag:delete -i <id> -t <token> -u <url> -o <organization> [options]
 ```
+
+#### Description
+
+This command deletes a tag from TestFiesta. By default, it will prompt for confirmation before deletion unless the --non-interactive flag is used.
+
+#### Arguments and options
+
+* `-i, --id <id>`: Tag ID
+* `-t, --token <token>`: TestFiesta API token
+* `-u, --url <url>`: TestFiesta API URL
+* `-o, --organization <organization>`: Organization handle
+* `-v, --verbose`: Enable verbose logging
+* `--non-interactive`: Skip confirmation prompts

@@ -1,35 +1,27 @@
 # Runs
 
-#### 1. Submit Test run
+### `testfiesta run:submit`
 
-**Command Syntax**
+Submit test results to TestFiesta
 
-```javascript
-tacotruck testfiesta run:submit [options]
+#### Synopsis
+
+```
+tacotruck testfiesta run:submit -d <path> -t <token> -h <organization> -p <project> -n <name> -u <url> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -d, --data \<path>: Path to test results file (XML/JSON)
-* -t, --token \<token>: TestFiesta API token
-* -h, --organization \<organization>: Organization handle
-* -p, --project \<project>: Project key
-* -n, --name \<name>: Name for the test run
-* -u, --url \<url>: TestFiesta API URL
+This command submits test results from a JUnit XML or JSON file to TestFiesta. It authenticates with TestFiesta using the provided API token, creates a new test run with the specified name, and uploads all test results to the specified project.
 
-**Optional Options**
+The command shows progress during the upload process and confirms successful submission when complete.
 
-* -v, --verbose: Enable detailed logging
+#### Arguments and options
 
-**Example**
-
-```javascript
-tacotruck testfiesta run:submit \
-  -d ./results.xml \
-  -t testfiesta_8a71af8ca7d84b9aadd54d919717e6a2.3b9426653583b1ab6bf30ba161e7fb5c \
-  -h offici \
-  -p DOLOR \
-  -n "CLI test run" \
-  -u https://api.testfiesta.com
-  
-```
+* `-d, --data <path>`: Path to test run data JSON/XML file
+* `-t, --token <token>`: TestFiesta API token
+* `-h, --organization <organization>`: Organization handle
+* `-p, --project <project>`: Project key
+* `-n, --name <name>`: Name for the test run
+* `-u, --url <url>`: TestFiesta instance URL (e.g., https://api.testfiesta.com)
+* `-v, --verbose`: Enable verbose logging

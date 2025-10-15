@@ -1,77 +1,48 @@
 # Projects
 
-### 1. Create Project
+### `testrail project:create`
 
-**Command Syntax**
+Create a new project in TestRail
 
-```
-tacotruck testrail project:create [options]
-```
-
-**Required Options**
-
-* -n, --name \<name>: Project name
-* -t, --token \<token>: TestRail API token in username:password format
-* -u, --url \<url>: TestRail instance URL (e.g., https://example.testrail.io)
-
-**Optional Options**
-
-* -s, --suite-mode \<suiteMode>: TestRail project structure:
-* 1: Single repository for all cases (default)
-* 2: Single repository with baselines
-* 3: Multiple test suites
-* -v, --verbose: Enable detailed logging
-
-**Example**
-
-**Required Options**
-
-* -n, --name \<name>: Project name
-* -t, --token \<token>: TestRail API token in username:password format
-* -u, --url \<url>: TestRail instance URL (e.g., https://example.testrail.io)
-
-**Optional Options**
-
-* -s, --suite-mode \<suiteMode>: TestRail project structure:
-* 1: Single repository for all cases (default)
-* 2: Single repository with baselines
-* 3: Multiple test suites
-* -v, --verbose: Enable detailed logging
-
-**Example**
+#### Synopsis
 
 ```
-tacotruck testrail project:create \
-  -n "API Testing Project" \
-  -t "username:password" \
-  -u https://example.testrail.io \
-  -s 1
+tacotruck testrail project:create -n <name> -t <token> -u <url> [options]
 ```
 
-### 2. Delete Project
+#### Description
 
-**Command Syntax**
+This command creates a new project in TestRail with the specified name. You can choose the project structure (suite mode) during creation.
+
+#### Arguments and options
+
+* `-n, --name <name>`: Project name
+* `-t, --token <token>`: TestRail API token in username:password format
+* `-u, --url <url>`: TestRail instance URL (e.g., https://example.testrail.io)
+* `-s, --suite-mode <suiteMode>`: TestRail project structure:
+  * `1`: Single repository for all cases (default)
+  * `2`: Single repository with baselines
+  * `3`: Multiple test suites
+* `-v, --verbose`: Enable verbose logging
+
+### `testrail project:delete`
+
+Delete a project in TestRail
+
+#### Synopsis
 
 ```
-tacotruck testrail project:delete [options]
+tacotruck testrail project:delete -i <projectId> -t <token> -u <url> [options]
 ```
 
-**Required Options**
+#### Description
 
-* -i, --project-id \<id>: TestRail project ID to delete
-* -t, --token \<token>: TestRail API token in username:password format
-* -u, --url \<url>: TestRail instance URL (e.g., https://example.testrail.io)
+This command deletes a project from TestRail. By default, it will prompt for confirmation before deletion unless the --force flag is used.
 
-**Optional Options**
+#### Arguments and options
 
-* -f, --force: Skip confirmation prompt
-* -v, --verbose: Enable detailed logging
-
-**Example**
-
-```
-tacotruck testrail project:delete \
-  -i 15 \
-  -t "username:password" \
-  -u https://example.testrail.io
-```
+* `-i, --project-id <id>`: TestRail project ID to delete
+* `-t, --token <token>`: TestRail API token in username:password format
+* `-u, --url <url>`: TestRail instance URL (e.g., https://example.testrail.io)
+* `-f, --force`: Skip confirmation prompt
+* `-v, --verbose`: Enable verbose logging
