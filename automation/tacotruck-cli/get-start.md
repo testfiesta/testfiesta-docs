@@ -1,24 +1,46 @@
 # Getting started
 
-## Getting Started with Tacotruck
-
-Tacotruck is a powerful tool for moving quality data between different testing platforms. Whether you need to submit test results to TestRail, TestFiesta, or migrate data between test case management tools, tacotruck provides a simple interface to accomplish these tasks.
+Tacotruck is a powerful tool for moving quality data between different testing platforms. Whether you need to submit test results to TestRail, TestFiesta, or migrate data between test case management tools, Tacotruck provides a simple interface to accomplish these tasks.
 
 ### Installation
 
-#### Global Installation
+#### MacOS & Linux
 
-```javascript
+```sh
+curl -fsSL https://testfiesta.com/install-tacotruck-cli.sh | bash
+```
+
+#### NPM
+
+Make sure you have installed [nodejs](https://nodejs.org/en) in your system with version `18` or higher.
+
+```sh
 npm install -g @testfiesta/tacotruck
 ```
 
 #### Using NPX
 
-```javascript
+```sh
 npx @testfiesta/tacotruck
 ```
 
-### commands&#x20;
+### Verify Installation
+
+You can verify installation process by running the following command:
+
+```bash
+tacotruck --version
+```
+
+### Upgrading CLI
+
+You can simply run the following command to upgrade the CLI:
+
+```sh
+tacotruck upgrade
+```
+
+### Commands&#x20;
 
 ```sh
 Commands:
@@ -85,37 +107,6 @@ The command shows progress during the upload process and confirms successful sub
 * `-p, --project <project>`: Project key
 * `-n, --name <name>`: Name for the test run
 * `-u, --url <url>`: TestFiesta instance URL (e.g., https://api.testfiesta.com)
-* `-v, --verbose`: Enable verbose logging
-
-#### TestRail Integration
-
-### `testrail run:submit`
-
-Submit test results to TestRail
-
-#### Synopsis
-
-```
-tacotruck testrail run:submit -d <path> -t <token> -u <url> -p <projectId> -n <name> [options]
-```
-
-#### Description
-
-This command submits test results from a JUnit XML or JSON file to TestRail. It authenticates with TestRail using the provided API token, creates a new test run with the specified name, and uploads all test results to the specified project.
-
-The command shows progress during the upload process and confirms successful submission when complete.
-
-#### Arguments and options
-
-* `-d, --data <path>`: Path to test run data JSON/XML file
-* `-t, --token <token>`: TestRail API token in username:password format
-* `-u, --url <url>`: TestRail instance URL (e.g., https://example.testrail.io)
-* `-p, --project <projectId>`: TestRail project ID
-* `-n, --name <name>`: Name for the test run
-* `-D, --x <text>`: Description for the test run
-* `-s, --suite-id <id>`: TestRail suite ID (required for projects with multiple test suites)
-* `-a, --include-all`: Include all test cases in the run
-* `-c, --case-ids <ids>`: Comma-separated list of case IDs to include (only if --include-all is not set)
 * `-v, --verbose`: Enable verbose logging
 
 ### Supported File Formats
