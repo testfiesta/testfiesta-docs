@@ -33,6 +33,7 @@ TestRail uses Basic Authentication with username and password.
     credentials: ${{ secrets.TESTRAIL_CREDENTIALS }}
     base-url: 'https://<your-username>.testrail.io'
     run-name: 'CI Run #${{ github.run_number }}'
+    source: 'Github action'
     config: |
       {
         "suite_id": 2,
@@ -90,5 +91,5 @@ Testfiesta uses Bearer token authentication.
 * [TacoTruck Examples](https://github.com/testfiesta/tacotruck-examples)
 * [Cypress Docs](https://docs.cypress.io/app/get-started/why-cypress)
 * [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
-* [**CLI Reference**](../tacotruck-cli/)
+* [**CLI Reference**](../tacotruck-cli/get-start.md)
 * [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

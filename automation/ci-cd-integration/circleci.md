@@ -75,6 +75,7 @@ jobs:
           handle: "acme-corp"
           run_name: "Frontend Tests - Build #${CIRCLE_BUILD_NUM}"
           base_url: "https://api.testfiesta.com"
+          source: "Circel CI"
 
 workflows:
   test-and-deploy:
@@ -143,6 +144,7 @@ jobs:
           handle: "dev-team"
           run_name: "C# NUnit Tests - Build #${CIRCLE_BUILD_NUM}"
           base_url: "https://api.testfiesta.com"
+          source: "Circle CI"
 
 workflows:
   dotnet-pipeline:

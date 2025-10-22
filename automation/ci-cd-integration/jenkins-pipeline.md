@@ -119,6 +119,7 @@ pipeline {
                     project: 'testProjectKey',
                     credentialsId: 'YOUR_CREDENTIALS_ID',
                     resultsPath: './test-results.xml'
+                    source: "Jenkins CI"
                 )
             }
         }
@@ -135,4 +136,3 @@ You can see the documentation for Tacotruck jenkins plugin [here](https://docs.t
 * [Jenkins Plugin Source](https://github.com/jenkinsci/tacotruck-plugin)
 * [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
 * [**CLI Reference**](../tacotruck-cli/)
-* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)

@@ -65,4 +65,3 @@ We can add "Execute Tacotruck" build step from "Add build step" dropdown button 
 * [Jenkins Plugin Source](https://github.com/jenkinsci/tacotruck-plugin)
 * [Tacotruck Issues](https://github.com/testfiesta/tacotruck/issues)
 * [**CLI Reference**](../tacotruck-cli/)
-* [Tacotruck Github Action](https://github.com/testfiesta/tacotruck-action)
