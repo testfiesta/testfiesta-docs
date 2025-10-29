@@ -270,6 +270,10 @@
 
 * [Tacotruck CLI](automation/tacotruck-cli/README.md)
   * [Getting started](automation/tacotruck-cli/get-start.md)
+  * [Installation](automation/tacotruck-cli/installation/README.md)
+    * [NPM](automation/tacotruck-cli/installation/npm.md)
+    * [Linux/macOS](automation/tacotruck-cli/installation/linux-macos-script-installation.md)
+    * [Homebrew](automation/tacotruck-cli/installation/homebrew.md)
   * [Commands](automation/tacotruck-cli/commands/README.md)
     * [Testfiesta](automation/tacotruck-cli/commands/testiest/README.md)
       * [Runs](automation/tacotruck-cli/commands/testiest/runs.md)

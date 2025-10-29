@@ -24,6 +24,18 @@ npm install -g @testfiesta/tacotruck
 npx @testfiesta/tacotruck
 ```
 
+#### Using  Homebrew&#x20;
+
+You can install TacoTruck using this custom Homebrew tap:
+
+```
+# Add the tap
+brew tap testfiesta/tacotruck
+
+# Install TacoTruck
+brew install tacotruck 
+```
+
 ### Verify Installation
 
 You can verify installation process by running the following command:
@@ -41,26 +53,6 @@ tacotruck upgrade
 ```
 
 ### Commands&#x20;
-
-#### Using  Homebrew&#x20;
-
-You can install TacoTruck using this custom Homebrew tap:
-
-```
-# Add the tap
-brew tap testfiesta/tacotruck
-
-# Install TacoTruck
-brew install tacotruck 
-```
-
-#### Using Installation  script&#x20;
-
-To install TacoTruck on macOS and Linux is using the automated installation script. This script detects your platform and architecture, downloads the appropriate binary, and configures your `PATH` automatically.
-
-```sh
-curl -fsSL https://testfiesta.com/install-tacotruck-cli.sh | bash
-```
 
 ```sh
 Commands:
