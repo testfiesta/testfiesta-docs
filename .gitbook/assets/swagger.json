@@ -13,6 +13,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -29,6 +32,17 @@
 							"asc",
 							"desc"
 						]
+					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list",
+							"onlyUids"
+						]
+					},
+					"entityType": {
+						"type": "string"
 					},
 					"name": {
 						"type": "string"
@@ -48,7 +62,8 @@
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -94,6 +109,14 @@
 							"type": "string"
 						},
 						"type": "array"
+					},
+					"isTemplateField": {
+						"type": "boolean",
+						"description": "Indicates whether this field was imported from a template (true) or added manually (false)."
+					},
+					"uuid": {
+						"type": "string",
+						"description": "UUID for backwards compatibility with template field matching.\nUsed to match case fields with template fields when available."
 					}
 				},
 				"required": [
@@ -147,6 +170,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -164,13 +190,22 @@
 							"desc"
 						]
 					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list",
+							"onlyUids"
+						]
+					},
 					"entityType": {
 						"type": "string"
 					}
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -248,6 +283,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -264,11 +302,23 @@
 							"asc",
 							"desc"
 						]
+					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list",
+							"onlyUids"
+						]
+					},
+					"entityType": {
+						"type": "string"
 					}
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -434,6 +484,10 @@
 						"type": "string",
 						"format": "date-time"
 					},
+					"startAt": {
+						"type": "string",
+						"format": "date-time"
+					},
 					"addMilestoneUids": {
 						"items": {
 							"type": "number",
@@ -519,6 +573,27 @@
 				"type": "object",
 				"description": "Construct a type with a set of properties K of type T"
 			},
+			"ProjectUserAssignment": {
+				"properties": {
+					"userUid": {
+						"type": "string"
+					},
+					"roleUid": {
+						"type": "string"
+					},
+					"tagUids": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"userUid"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"CreateProjectDto": {
 				"properties": {
 					"name": {
@@ -535,6 +610,12 @@
 					},
 					"customFields": {
 						"$ref": "#/components/schemas/Record_string.any_"
+					},
+					"users": {
+						"items": {
+							"$ref": "#/components/schemas/ProjectUserAssignment"
+						},
+						"type": "array"
 					}
 				},
 				"required": [
@@ -552,6 +633,9 @@
 						"type": "number",
 						"format": "double"
 					},
+					"cursor": {
+						"type": "string"
+					},
 					"offset": {
 						"type": "number",
 						"format": "double"
@@ -568,6 +652,17 @@
 							"asc",
 							"desc"
 						]
+					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list",
+							"onlyUids"
+						]
+					},
+					"entityType": {
+						"type": "string"
 					},
 					"status": {
 						"type": "number",
@@ -645,11 +740,16 @@
 						"type": "number",
 						"format": "double",
 						"description": "project to filter by"
+					},
+					"onlyUids": {
+						"type": "boolean",
+						"description": "only return the uid of the plan"
 					}
 				},
 				"required": [
 					"limit",
 					"offset",
+					"queryType",
 					"archived",
 					"minRunCount",
 					"minCreatedAt",
@@ -735,6 +835,16 @@
 						"type": "number",
 						"format": "double",
 						"description": "The priority level of the plan.\nOptional field that represents the priority of the plan, typically represented as a numeric value (e.g., 1 = high, 2 = medium, 3 = low)."
+					},
+					"dueAt": {
+						"type": "string",
+						"format": "date-time",
+						"description": "The due date of the plan.\nOptional field that represents the due date of the plan."
+					},
+					"startDate": {
+						"type": "string",
+						"format": "date-time",
+						"description": "The start date of the plan.\nOptional field that represents the start date of the plan."
 					},
 					"customFields": {
 						"$ref": "#/components/schemas/Record_string.string_",
@@ -831,6 +941,10 @@
 						"type": "number",
 						"format": "double",
 						"description": "The priority level of the plan.\nOptional field to update the priority of the plan, generally represented as a numeric value (e.g., 1 = high, 2 = medium, 3 = low)."
+					},
+					"customFields": {
+						"$ref": "#/components/schemas/Record_string.any_",
+						"description": "The custom fields of the plan.\nOptional field to update the custom fields of the plan.\nCan include fields like dueAt (as Date or ISO string)."
 					}
 				},
 				"type": "object",
@@ -859,6 +973,14 @@
 						"type": "number",
 						"format": "double",
 						"description": "The status of the milestone.\nA number representing the current status of the milestone (e.g., 1 for \"In Progress\", 2 for \"Completed\")."
+					},
+					"externalId": {
+						"type": "string",
+						"description": "The external ID of the milestone.\nOptional field to specify an external ID for the milestone."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the milestone.\nOptional field to specify the source of the milestone."
 					},
 					"planIds": {
 						"items": {
@@ -916,6 +1038,14 @@
 						"type": "number",
 						"format": "double",
 						"description": "The status of the milestone.\nA number representing the current status of the milestone (e.g., 1 for \"In Progress\", 2 for \"Completed\")."
+					},
+					"externalId": {
+						"type": "string",
+						"description": "The external ID of the milestone.\nOptional field to specify an external ID for the milestone."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the milestone.\nOptional field to specify the source of the milestone."
 					},
 					"planIds": {
 						"items": {
@@ -1092,6 +1222,54 @@
 				"type": "object",
 				"additionalProperties": false
 			},
+			"TagReplacement": {
+				"properties": {
+					"existingTagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"newTagUids": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"StepAttachment": {
+				"description": "Represents an attachment associated with a test case step.",
+				"properties": {
+					"uid": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"fileType": {
+						"type": "string"
+					},
+					"size": {
+						"type": "number",
+						"format": "double"
+					},
+					"previewUrl": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"uid",
+					"name",
+					"fileType"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"Pick_TestCaseStepItem.Exclude_keyofTestCaseStepItem.id-or-children__": {
 				"properties": {
 					"description": {
@@ -1102,6 +1280,12 @@
 						"type": "number",
 						"format": "double",
 						"description": "The unique identifier for the shared step associated with this item.\nOptional field to link this item to a specific shared step."
+					},
+					"attachments": {
+						"items": {
+							"$ref": "#/components/schemas/StepAttachment"
+						},
+						"type": "array"
 					},
 					"title": {
 						"type": "string",
@@ -1125,6 +1309,12 @@
 						"type": "number",
 						"format": "double",
 						"description": "The unique identifier for the shared step associated with this item.\nOptional field to link this item to a specific shared step."
+					},
+					"attachments": {
+						"items": {
+							"$ref": "#/components/schemas/StepAttachment"
+						},
+						"type": "array"
 					},
 					"title": {
 						"type": "string",
@@ -1187,23 +1377,7 @@
 					},
 					"tagReplacements": {
 						"items": {
-							"properties": {
-								"newTagUids": {
-									"items": {
-										"type": "number",
-										"format": "double"
-									},
-									"type": "array"
-								},
-								"existingTagUids": {
-									"items": {
-										"type": "number",
-										"format": "double"
-									},
-									"type": "array"
-								}
-							},
-							"type": "object"
+							"$ref": "#/components/schemas/TagReplacement"
 						},
 						"type": "array",
 						"description": "The tag replacements for the execution.\nOptional field to replace existing tags with new ones.\n`existingTagUids` is an array of existing tags to be replaced, and `newTagUids` is an array of the new tags."
@@ -1221,6 +1395,21 @@
 					},
 					"templateFields": {
 						"description": "The template fields for the execution.\nOptional field to update or specify template fields associated with the execution."
+					},
+					"rules": {
+						"description": "The rules for the execution.\nOptional field to update or specify rules associated with the execution."
+					},
+					"positions": {
+						"items": {
+							"properties": {},
+							"additionalProperties": {
+								"type": "number",
+								"format": "double"
+							},
+							"type": "object"
+						},
+						"type": "array",
+						"description": "The positions of the executions.\nOptional field to specify the positions of the executions.\nThis is an optional object where each key is a unique identifier (uid) and the value is the position of that execution."
 					}
 				},
 				"required": [
@@ -1305,18 +1494,26 @@
 					},
 					"source": {
 						"type": "string"
+					},
+					"status": {
+						"type": "string"
 					}
 				},
 				"required": [
 					"caseRef",
 					"runRef",
-					"source"
+					"source",
+					"status"
 				],
 				"type": "object",
 				"additionalProperties": {}
 			},
 			"CreateDataDto": {
 				"properties": {
+					"runId": {
+						"type": "number",
+						"format": "double"
+					},
 					"entities": {
 						"properties": {
 							"executions": {
@@ -1385,6 +1582,79 @@
 				"type": "object",
 				"additionalProperties": false
 			},
+			"CaseLogUploadItem": {
+				"properties": {
+					"fileName": {
+						"type": "string"
+					},
+					"fileType": {
+						"type": "string"
+					},
+					"size": {
+						"type": "number",
+						"format": "double"
+					},
+					"storagePath": {
+						"type": "string"
+					},
+					"mediaType": {
+						"type": "string",
+						"enum": [
+							"attachment"
+						],
+						"nullable": false
+					},
+					"externalId": {
+						"type": "string"
+					},
+					"runId": {
+						"anyOf": [
+							{
+								"type": "number",
+								"format": "double"
+							},
+							{
+								"type": "string"
+							}
+						]
+					},
+					"version": {
+						"anyOf": [
+							{
+								"type": "number",
+								"format": "double"
+							},
+							{
+								"type": "string"
+							}
+						]
+					}
+				},
+				"required": [
+					"fileName",
+					"fileType",
+					"size",
+					"externalId",
+					"runId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CaseLogUploadRequest": {
+				"properties": {
+					"files": {
+						"items": {
+							"$ref": "#/components/schemas/CaseLogUploadItem"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"files"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"CustomFieldTypes": {
 				"type": "string",
 				"enum": [
@@ -1398,6 +1668,13 @@
 					"multi",
 					"file",
 					"integer"
+				]
+			},
+			"CustomFieldEntityTypes": {
+				"type": "string",
+				"enum": [
+					"testCase",
+					"testResult"
 				]
 			},
 			"CreateCustomFieldDto": {
@@ -1421,6 +1698,13 @@
 						},
 						"type": "array",
 						"description": "The options for the custom field.\nOptional field to define the available choices for the custom field, applicable for certain types like dropdowns or radio buttons.\nShould be an array of strings representing the options."
+					},
+					"entityTypes": {
+						"items": {
+							"$ref": "#/components/schemas/CustomFieldEntityTypes"
+						},
+						"type": "array",
+						"description": "The entity types this custom field applies to.\nAn array of entity types (e.g., 'testCase', 'testResult') that this custom field can be used with."
 					}
 				},
 				"required": [
@@ -1450,6 +1734,13 @@
 						},
 						"type": "array",
 						"description": "The options for the custom field.\nOptional field to update or add new options for the custom field.\nShould be an array of strings representing the updated options."
+					},
+					"entityTypes": {
+						"items": {
+							"$ref": "#/components/schemas/CustomFieldEntityTypes"
+						},
+						"type": "array",
+						"description": "The entity types this custom field applies to.\nOptional field to update the entity types that this custom field can be used with."
 					}
 				},
 				"type": "object",
@@ -1460,6 +1751,9 @@
 					"limit": {
 						"type": "number",
 						"format": "double"
+					},
+					"cursor": {
+						"type": "string"
 					},
 					"offset": {
 						"type": "number",
@@ -1478,6 +1772,17 @@
 							"desc"
 						]
 					},
+					"queryType": {
+						"type": "string",
+						"enum": [
+							"count",
+							"list",
+							"onlyUids"
+						]
+					},
+					"entityType": {
+						"type": "string"
+					},
 					"priority": {
 						"type": "string"
 					},
@@ -1487,7 +1792,26 @@
 				},
 				"required": [
 					"limit",
-					"offset"
+					"offset",
+					"queryType"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CaseEvent": {
+				"properties": {
+					"type": {
+						"type": "string"
+					},
+					"fields": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"type"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -1542,6 +1866,11 @@
 						"type": "string",
 						"description": "The template ID associated with the case.\nOptional field to specify a template to be applied to the case. It links the case to a predefined template for consistency in its structure."
 					},
+					"testResultTemplateUid": {
+						"type": "number",
+						"format": "double",
+						"description": "The test result template ID associated with the case.\nOptional field to specify a test result template to be applied to the case."
+					},
 					"tagIds": {
 						"items": {
 							"type": "number",
@@ -1578,6 +1907,10 @@
 					},
 					"createdAt": {
 						"type": "string"
+					},
+					"event": {
+						"$ref": "#/components/schemas/CaseEvent",
+						"description": "Event that triggered the creation or update of the case"
 					}
 				},
 				"required": [
@@ -1595,7 +1928,7 @@
 	},
 	"info": {
 		"title": "testfiesta-backend",
-		"version": "0.67.1",
+		"version": "0.104.6",
 		"license": {
 			"name": "Closed"
 		},
@@ -1649,6 +1982,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -1682,6 +2023,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
@@ -1963,6 +2325,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -1996,6 +2366,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
@@ -2216,6 +2607,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2249,6 +2648,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -2504,6 +2924,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2537,6 +2965,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -2765,6 +3214,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2798,6 +3255,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -2886,6 +3364,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -2919,6 +3405,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
@@ -3066,6 +3573,15 @@
 						"schema": {
 							"format": "double",
 							"type": "number"
+						}
+					},
+					{
+						"description": "only return the uid of the plan",
+						"in": "query",
+						"name": "onlyUids",
+						"required": false,
+						"schema": {
+							"type": "boolean"
 						}
 					}
 				]
@@ -3260,6 +3776,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -3293,6 +3817,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -3549,6 +4094,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -3582,6 +4135,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -3838,6 +4412,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -3871,6 +4453,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -4066,6 +4669,103 @@
 				}
 			}
 		},
+		"/v1/{handle}/projects/{key}/data/url": {
+			"post": {
+				"operationId": "GenerateCaseLogUploadUrls",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"files": {
+											"items": {
+												"properties": {
+													"storagePath": {
+														"type": "string"
+													},
+													"clientHeaders": {
+														"properties": {},
+														"additionalProperties": {
+															"anyOf": [
+																{
+																	"type": "string"
+																},
+																{
+																	"type": "number",
+																	"format": "double"
+																}
+															]
+														},
+														"type": "object"
+													},
+													"key": {
+														"type": "string"
+													},
+													"objectUrl": {
+														"type": "string"
+													},
+													"signedUrl": {
+														"type": "string"
+													},
+													"fileName": {
+														"type": "string"
+													}
+												},
+												"required": [
+													"storagePath",
+													"clientHeaders",
+													"key",
+													"objectUrl",
+													"signedUrl",
+													"fileName"
+												],
+												"type": "object"
+											},
+											"type": "array"
+										}
+									},
+									"required": [
+										"files"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handle",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "key",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CaseLogUploadRequest"
+							}
+						}
+					}
+				}
+			}
+		},
 		"/v1/{handle}/projects/{key}/customFields": {
 			"get": {
 				"operationId": "GetCustomFields",
@@ -4111,6 +4811,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -4144,6 +4852,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					}
 				]
@@ -4397,6 +5126,14 @@
 					},
 					{
 						"in": "query",
+						"name": "cursor",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
 						"name": "offset",
 						"required": true,
 						"schema": {
@@ -4430,6 +5167,27 @@
 								"asc",
 								"desc"
 							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "queryType",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"count",
+								"list",
+								"onlyUids"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "entityType",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
