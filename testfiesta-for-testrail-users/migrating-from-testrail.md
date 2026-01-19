@@ -5,7 +5,7 @@ description: >-
   enterprises.
 ---
 
-# Migrating From TestRail
+# Test Data Migration Options
 
 ## Migration Options
 
@@ -49,7 +49,7 @@ Whether you’re using TestRail Cloud or Server, these methods ensure your test 
 
 <summary>PartyInvites (Enterprise and TestRail Server Users)</summary>
 
-* **Overview:** PartyInvites is a specialized tool for large-scale migrations, particularly for TestRail Server users or enterprises with full database copies (e.g., enterprise-sized teams). It directly imports an entire TestRail database into TestFiesta, ensuring no data loss.
+* **Overview:** PartyInvites is a specialized tool for large-scale migrations, particularly for TestRail Server users or enterprises with full database copies (e.g., enterprise-sized teams). It directly imports an entire TestRail database into TestFiesta, ensuring no data loss.&#x20;
 * **How It Works:**
   1. Contact TestFiesta support at [testfiesta.com/contact-us](https://testfiesta.com/contact-us) to initiate the process.
   2. Provide access to your TestRail Server database or a database copy (e.g., SQL dump or backup).
@@ -57,7 +57,7 @@ Whether you’re using TestRail Cloud or Server, these methods ensure your test 
   4. Validate the migration in a dedicated TestFiesta project, using dashboards to confirm data integrity.
 * **When to Use:** Best for enterprise teams with complex TestRail Server setups or large datasets requiring a hands-off, high-fidelity migration.
 * **Benefits:** Handles massive datasets, preserves all metadata, and minimizes manual effort. Tailored for server-based instances not accessible via API.
-* **Limitations:** Not publicly available yet; requires coordination with TestFiesta’s team. Primarily for TestFiesta’s internal use or large accounts.
+* **Limitations:** Not publicly available yet; requires coordination with TestFiesta’s team. Primarily for TestFiesta’s internal use or large accounts.&#x20;
 * **Tips:** Schedule a consultation with support to plan the migration timeline. Use TestFiesta’s audit logs (Admin > Audit Log) to track imported data actions.
 
 </details>
