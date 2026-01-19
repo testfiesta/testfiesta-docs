@@ -33,8 +33,7 @@ The table below outlines which TestRail data migrates to TestFiesta and what rem
   * Disabling Sync: Turn off sync in Admin > Integrations after full migration to prevent conflicts or duplicate updates.
 * **Validation:** Review migrated data in a TestFiesta project or staging environment. Refresh the UI to resolve minor display issues (e.g., folder loading glitches noted in testing).
 * **For TestRail Users:** Unlike TestRail’s one-way exports, TestFiesta’s bidirectional sync supports parallel use during evaluation, ensuring no data loss.
-* **Tip:** Test sync in a demo project first to confirm mappings. Use Help & Feedback for sync issues.\
-
+* **Tip:** Test sync in a demo project first to confirm mappings. Use Help & Feedback for sync issues.<br>
 
 Tip: Before migration, export critical user settings or integration configurations from TestRail to reference during TestFiesta setup. See [docs.testfiesta.com/getting-started/testrail-migration](https://docs.testfiesta.com/getting-started/testrail-migration).
 

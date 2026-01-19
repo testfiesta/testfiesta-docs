@@ -2,8 +2,7 @@
 
 <figure><img src="../../../.gitbook/assets/rspec-plain-wordmark-8x-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
-RSpec is a behavior-driven development (BDD) testing framework for the Ruby programming language, widely used for testing Ruby code and, notably, Ruby on Rails applications. RSpec  can  generate standard format JUnit-style XML files  which can be  submitted  to Testfiesta or Testrail using Tacotruck CLI. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple RSpec [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-rspec-tf).\
-
+RSpec is a behavior-driven development (BDD) testing framework for the Ruby programming language, widely used for testing Ruby code and, notably, Ruby on Rails applications. RSpec  can  generate standard format JUnit-style XML files  which can be  submitted  to Testfiesta or Testrail using Tacotruck CLI. You just need to install the popular [`pytest`](https://docs.pytest.org/en/stable/getting-started.html) , and install tacotruck  cli or use [Github action](https://github.com/testfiesta/tacotruck-action).  Check out simple RSpec [example](https://github.com/testfiesta/tacotruck-examples/tree/main/demo-rspec-tf).<br>
 
 ### Configuration
 
