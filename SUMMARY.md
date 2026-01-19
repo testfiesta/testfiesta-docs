@@ -15,7 +15,7 @@
 ## TestFiesta For TestRail Users
 
 * [Getting Started](testfiesta-for-testrail-users/getting-started.md)
-* [Migrating From TestRail](testfiesta-for-testrail-users/migrating-from-testrail.md)
+* [Test Data Migration Options](testfiesta-for-testrail-users/test-data-migration-options.md)
 * [Integrations Options](testfiesta-for-testrail-users/integrations-options.md)
 * [Full TestRail Integration Tutorial](testfiesta-for-testrail-users/full-testrail-integration-tutorial.md)
 * [TestRail API Integration Deep Dive](testfiesta-for-testrail-users/testrail-api-integration-deep-dive.md)
